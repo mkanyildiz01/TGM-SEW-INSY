@@ -143,12 +143,38 @@ public class DomPrinter {
                     itele ++;
                 }
             }
-            // If the Phone number was equal
+            // If the Phone number is equal
             if (tele = true) {
                 System.out.println("|Es gibt " + itele + " Kunden mit der gleichen|");
                 System.out.println("|Vorwahl                          |");
                 System.out.println("+---------------------------------+");
             }
+
+            //Exercise Number 5 Gibt es Kunden, die nicht aus den USA sind?
+            System.out.println("| Number 5:                       |");
+            System.out.println("+---------------------------------+");
+            /*
+                @land: Takes all node elements with the name country.
+                @iland: Integer that counts all customers.
+                @ilanduse: Integer that counts all customers, witch are from the U.S.
+                @address: Is a node list with all the addresses(1 by 1).
+            */
+            NodeList land = doc.getElementsByTagName("Country");
+            int iland = 0;
+            int ilandusa = 0;
+            for (int i = 0, nodsize = land.getLength(); i < nodsize; i++) {
+                Node address = land.item(i);
+                iland++;
+                if (address.getTextContent().equals("USA")) {
+                    ilandusa ++;
+                }
+            }
+            if (ilandusa == iland) {
+                System.out.println("| Alle Kunden sind aus der USA: "+iland+" " + "|");
+            }else{
+                System.out.println("| Es sind nicht alle Kunden aus der USA: "+iland+" " + "|");
+            }
+
         }catch (SAXException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {
