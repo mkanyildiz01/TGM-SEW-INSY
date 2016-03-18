@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<verzeichnis id="1" id=3>
+     <titel>Beispiel 1</titel>
+     <eintrag>
+          <stichwort />
+          <eintragstext>Eintragstext</Eintragstext>
+     </eintrag> 
+     <eintrag>
+          <stichwort />
+          <eintragstext>Eintragstext</eintragstext>
+     </Eintrag>
+</Verzeichnis>

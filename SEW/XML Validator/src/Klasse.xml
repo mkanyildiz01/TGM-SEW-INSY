@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schoolclass>
+	<mitglied id = "1" herkunft="deutschland"  gebdate="10/10/1998">
+		<name>mueller meier</name>
+		<notendurchschnitt>1.1</notendurchschnitt>
+		<alter>17</alter>
+		<geschlecht lang="de">maenlich</geschlecht>
+		<verhaltensnote lang="de">sehr gut</verhaltensnote>
+	</mitglied>
+	<mitglied id = "2" herkunft="deutschland" gebdate="11/11/1997">
+		<name>schneider michael</name>
+		<notendurchschnitt>3.5</notendurchschnitt>
+		<alter>18</alter>
+		<geschlecht lang="de">maenlich</geschlecht>
+		<verhaltensnote lang="de">gut</verhaltensnote>
+	</mitglied>
+	<mitglied id = "3" herkunft="Suedamerikaner" gebdate="12/12/1998">
+		<name>william ram holecek</name>
+		<notendurchschnitt>3</notendurchschnitt>
+		<alter>17</alter>
+		<geschlecht lang="de">maenlich</geschlecht>
+		<verhaltensnote lang="de">sehr gut</verhaltensnote>
+	</mitglied>
+	<mitglied id = "4" herkunft="rumaenien" gebdate="14/01/1998">
+		<name>alex jaravete</name>
+		<notendurchschnitt>1</notendurchschnitt>
+		<alter>18</alter>
+		<geschlecht lang="de">maenlich</geschlecht>
+		<verhaltensnote lang="de">sehr gut</verhaltensnote>
+	</mitglied>
+	<mitglied id = "5" herkunft="oesterreich" gebdate="11/01/1997">
+		<name>philipp kogler</name>
+		<notendurchschnitt>1</notendurchschnitt>
+		<alter>18</alter>
+		<geschlecht lang="de">maenlich</geschlecht>
+		<verhaltensnote lang="de">sehr gut</verhaltensnote>
+	</mitglied>
+</schoolclass>
+

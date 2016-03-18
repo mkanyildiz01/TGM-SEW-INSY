@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="xsdv">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Libs/xsdv.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
