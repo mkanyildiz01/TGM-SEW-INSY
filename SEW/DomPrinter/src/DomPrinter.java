@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -174,7 +176,41 @@ public class DomPrinter {
             }else{
                 System.out.println("| Es sind nicht alle Kunden aus der USA: "+iland+" " + "|");
             }
+            // Beispiel Nummer 6 Welche(r) Kunde(n ) hatte(n ) die meisten Bestellungen?
+            System.out.println("| Aufgabe Nr6:                    |");
+            System.out.println("+---------------------------------+");
+            /*
+                @bestellungen: Takes all node elements with the name Order.
+                @greal01,hungc01,lazyk01,letss01: Integers, witch are used to count up.
+                @order: Getting the child elements from Order.
+                @name1: Getting the customer name.
+                @top01: TreeMap, to write the data down and print it out.
+            */
 
+            NodeList bestellungen = doc.getElementsByTagName("Order");
+            int greal01 = 0; int hungc01 = 0; int lazyk01 = 0; int letss01 = 0;
+            for (int i = 0, nodsize = bestellungen.getLength(); i < nodsize; i++) {
+                Node order = bestellungen.item(i).getChildNodes().item(1);
+                String name1 = order.getTextContent();
+                // Comparing the names and counting up the Variables.
+                if (name1.equals("GREAL")) {
+                    greal01++;
+                } else if (name1.equals("HUNGC")) {
+                    hungc01++;
+                } else if (name1.equals("LAZYK")) {
+                    lazyk01++;
+                } else if (name1.equals("LETSS")) {
+                    letss01++;
+                }
+            }
+            // Writing down the data
+            TreeMap<String,Integer> top01 = new TreeMap<String,Integer>();
+            top01.put("GREAL",greal01);
+            top01.put("HUNGC",hungc01);
+            top01.put("LAZYK",lazyk01);
+            top01.put("LETSS",letss01);
+            
+            System.out.println(top01);
         }catch (SAXException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {
