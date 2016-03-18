@@ -124,27 +124,26 @@ public class DomPrinter {
             System.out.println("+---------------------------------+");
             /*
                 @vorwahl: All Node Elements with the name Phone
-                @tele: Boolean for checking if its true
+                @tele: Boolean
+                @temp1: Is getting the the full i PhoneNumber
+                @temp2: Is getting the the full i+1 PhoneNumber
             */
             NodeList vorwahl = doc.getElementsByTagName("Phone");
             boolean tele;
             int itele = 0;
             for (int i = 0, nodsize = vorwahl.getLength(); i < nodsize; i++) {
-                // Die Nods der Verschidenen über Elemente holen
                 Node temp1 = vorwahl.item(i);
-                // Eine Node weiter speichern
                 Node temp2 = vorwahl.item(i++);
-                // Speichern der Nods(Vorwahlen) in Strings
+                // Filtering the first 5 Numbers of the Phone
                 temp1.toString().substring(0, 4);
-                // Speichern der Nods(Vorwahlen) in Strings
                 temp2.toString().substring(0, 4);
-                // Vergleichen ob die Nummern passen
+                // Comparing the both Variables
                 if (temp1.equals(temp2)) {
                     tele = true;
                     itele ++;
                 }
             }
-            // Ausgabe wenn es gleich ist
+            // If the Phone number was equal
             if (tele = true) {
                 System.out.println("|Es gibt " + itele + " Kunden mit der gleichen|");
                 System.out.println("|Vorwahl                          |");
