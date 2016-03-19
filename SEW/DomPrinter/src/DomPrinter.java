@@ -1,5 +1,8 @@
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -176,8 +179,8 @@ public class DomPrinter {
             }else{
                 System.out.println("| Es sind nicht alle Kunden aus der USA: "+iland+" " + "|");
             }
-            // Beispiel Nummer 6 Welche(r) Kunde(n ) hatte(n ) die meisten Bestellungen?
-            System.out.println("| Aufgabe Nr6:                    |");
+            //Exercise Number 6 Welche(r) Kunde(n ) hatte(n ) die meisten Bestellungen?
+            System.out.println("| Number 6:                       |");
             System.out.println("+---------------------------------+");
             /*
                 @bestellungen: Takes all node elements with the name Order.
@@ -192,7 +195,7 @@ public class DomPrinter {
             for (int i = 0, nodsize = bestellungen.getLength(); i < nodsize; i++) {
                 Node order = bestellungen.item(i).getChildNodes().item(1);
                 String name1 = order.getTextContent();
-                // Comparing the names and counting up the Variables.
+                // Comparing the names and counting up the variables.
                 if (name1.equals("GREAL")) {
                     greal01++;
                 } else if (name1.equals("HUNGC")) {
@@ -203,19 +206,76 @@ public class DomPrinter {
                     letss01++;
                 }
             }
-            // Writing down the data
+            // Writing down the data and printing them out.
             TreeMap<String,Integer> top01 = new TreeMap<String,Integer>();
             top01.put("GREAL",greal01);
             top01.put("HUNGC",hungc01);
             top01.put("LAZYK",lazyk01);
             top01.put("LETSS",letss01);
-            
+
             System.out.println(top01);
+
+
+            //Exercise Number 7 Wann war die letzte Bestellung von LAZYK?
+            System.out.println("+---------------------------------+");
+            System.out.println("| Number 7:                       |");
+            System.out.println("+---------------------------------+");
+            /*
+                @KundenID: Takes all node elements with the name customerID.
+                @Temp1: Goes through the value of KundenID.
+                @Name1: Is 1 value of Temp1(Always changing...for()).
+                @BestellDatum: Takes all node elements with the name OrderDate.
+
+            */
+            NodeList KundenID = doc.getElementsByTagName("CustomerID");
+            NodeList BestellDatum = doc.getElementsByTagName("OrderDate");
+            Integer i1 = 0;
+            Date DatumD = null;
+            for (int i = 0, size = bestellungen.getLength(); i < size; i++) {
+                Node Temp1 = KundenID.item(i);
+                String Name1 = Temp1.getTextContent();
+
+                //Coparing the Strings
+                if (Name1.equals("LAZYK")) {
+                    Node Temp02 = BestellDatum.item(i);
+                    String Datum01 = Temp02.getTextContent();
+                    String Datum02 = Datum01.substring(0,10);
+                    String stemp01 = Datum01.substring(12,19);
+                    String DateTime01 = Datum02 + " " + stemp01;
+                    Date temp01 = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss").parse(DateTime01);
+
+
+                    if(i1 == 0){
+                        Node Temp03 = BestellDatum.item(i+1);
+                        String Datum03 = Temp03.getTextContent();
+                        String Datum04 = Datum03.substring(0,10);
+                        String stemp02 = Datum03.substring(12,19);
+                        String DateTime02 = Datum04 + " " + stemp02;
+                        Date temp02 = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss").parse(DateTime02);
+                        if(temp01.after(temp02)){
+                            DatumD = temp01;
+                        }else{
+                            DatumD = temp01;
+                        }
+
+                    }else{
+                        if(temp01.after(DatumD)){
+                            DatumD = temp01;
+                        }
+                    }
+                    i1++;
+
+                }
+
+            }
+            System.out.println("| " + DatumD + "    |");
         }catch (SAXException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
             e.printStackTrace();
         }
     }
