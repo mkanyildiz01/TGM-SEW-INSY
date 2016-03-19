@@ -285,6 +285,40 @@ public class DomPrinter {
 
             }
             System.out.println("| " + DatumD + "    |");
+
+            //Exercise Number 8 Von wie vielen verschiedenen Mitarbeitern wurde GREAL bedient?
+            System.out.println("+---------------------------------+");
+            System.out.println("| Number 8:                       |");
+            System.out.println("+---------------------------------+");
+            /*
+                @KundenID1: Takes all node elements with the name CustomerID.
+                @EmployeeID1: Takes all node elements with the name EmployeeID.
+                @ts01: TreeSet, takes the EmployeeID(TreeSet doesn't take the same Element value 2 times)
+                @tempID01: Takes the current(for int i) the CustomerID value.
+                @tempID02: Takes the current(for int i) the EmployeeID value.
+                @name01: @tempID01 to String
+                @name02: @tempID02 to String
+            */
+            NodeList KundenID1 = doc.getElementsByTagName("CustomerID");
+            NodeList EmployeeID1 = doc.getElementsByTagName("EmployeeID");
+            TreeSet<String> ts01 = new TreeSet<String>();
+
+            for (int i = 0, nodsize = bestellungen.getLength(); i < nodsize; i++) {
+                Node tempID01 = KundenID1.item(i);
+                Node tempID02 = EmployeeID1.item(i);
+                String name01 = tempID01.getTextContent();
+                String name02 = tempID02.getTextContent();
+                //Comparing the customer value, if its equal it adds the value to the
+                //TreeSet
+                if (name01.equals("GREAL")) {
+                    ts01.add(name02);
+                }
+
+            }
+            //Output
+            System.out.println("| GREAL: Von " + ts01.size() + " verschiedenen      |");
+            System.out.println("| Mitarbeitern                    |");
+            
         }catch (SAXException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {
