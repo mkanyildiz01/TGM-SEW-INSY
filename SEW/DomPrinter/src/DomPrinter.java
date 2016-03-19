@@ -81,7 +81,7 @@ public class DomPrinter {
             System.out.println("+---------------------------------+");
             System.out.println("| Eingabe:(1): Order + Customer   |");
             System.out.println("| Eingabe:(2): Order              |");
-            System.out.println("+ Eingabe:(3): Customer           |");
+            System.out.println("| Eingabe:(3): Customer           |");
             System.out.println("+---------------------------------+");
             /*
                 @kunden: A Node List with all Customers-Elements
@@ -198,7 +198,7 @@ public class DomPrinter {
             }
 
             //Exercise Number 5 Gibt es Kunden, die nicht aus den USA sind?
-            System.out.println("| Number 5:                       |");
+            System.out.println("| Number 5: Eingabe(Länder)z.b.USA|");
             System.out.println("+---------------------------------+");
             /*
                 @land: Takes all node elements with the name country.
@@ -206,23 +206,27 @@ public class DomPrinter {
                 @ilanduse: Integer that counts all customers, witch are from the U.S.
                 @address: Is a node list with all the addresses(1 by 1).
             */
+            //Buffer to save the input
+            BufferedReader br03 = new BufferedReader(new InputStreamReader(System.in));
+            //User input
+            String input01 = br01.readLine();
+
             NodeList land = doc.getElementsByTagName("Country");
-            int iland = 0;
-            int ilandusa = 0;
+            int inputland = 0;
             for (int i = 0, nodsize = land.getLength(); i < nodsize; i++) {
                 Node address = land.item(i);
-                iland++;
-                if (address.getTextContent().equals("USA")) {
-                    ilandusa ++;
+                if (address.getTextContent().equals(input01)) {
+                    inputland ++;
                 }
             }
-            if (ilandusa == iland) {
-                System.out.println("| Alle Kunden sind aus der USA: "+iland+" " + "|");
-            }else{
-                System.out.println("| Es sind nicht alle Kunden aus der USA: "+iland+" " + "|");
-            }
+            System.out.println("| Es sind " + inputland + " Mitarbeiter aus: " + input01 +"   |");
+
             //Exercise Number 6 Welche(r) Kunde(n ) hatte(n ) die meisten Bestellungen?
-            System.out.println("| Number 6:                       |");
+            System.out.println("+---------------------------------+");
+            System.out.println("| Number 6: Eingabe(1-2)          |");
+            System.out.println("+---------------------------------+");
+            System.out.println("| Eingabe:(1): Die Meisten Bestell|");
+            System.out.println("| Eingabe:(2): Die Wenigsten Beste|");
             System.out.println("+---------------------------------+");
             /*
                 @bestellungen: Takes all node elements with the name Order.
@@ -249,14 +253,28 @@ public class DomPrinter {
                 }
             }
             // Writing down the data and printing them out.
-            TreeMap<String,Integer> top01 = new TreeMap<String,Integer>();
-            top01.put("GREAL",greal01);
-            top01.put("HUNGC",hungc01);
-            top01.put("LAZYK",lazyk01);
-            top01.put("LETSS",letss01);
+            TreeMap<Integer,String> top01 = new TreeMap<Integer,String>();
+            top01.put(greal01,"GREAL");
+            top01.put(hungc01,"HUNGC");
+            top01.put(lazyk01,"LAZYK");
+            top01.put(letss01,"LETSS");
+            //Buffer to save the input
+            BufferedReader br04 = new BufferedReader(new InputStreamReader(System.in));
+            //String input01 = br01.readLine();
+            //User input
+            int inputint04 = Integer.parseInt(br04.readLine());
 
-            System.out.println(top01);
-
+            if(inputint04 == 1) {
+                Object firstKey = top01.keySet().toArray()[0];
+                Object valueForFirstKey = top01.get(firstKey);
+                System.out.println("| Die Wenigsten: " + firstKey + " = " + valueForFirstKey);
+            }else if(inputint04 == 2){
+                Object firstKey = top01.keySet().toArray()[top01.size()-1];
+                Object valueForFirstKey = top01.get(firstKey);
+                System.out.println("| Die Meisten: " + firstKey + " = " + valueForFirstKey);
+            }else{
+                System.out.println("Die Eingabe muss zwischen 1-2 sein!");
+            }
 
             //Exercise Number 7 Wann war die letzte Bestellung von LAZYK?
             System.out.println("+---------------------------------+");
