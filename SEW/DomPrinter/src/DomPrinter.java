@@ -250,7 +250,7 @@ public class DomPrinter {
                 Node Temp1 = KundenID.item(i);
                 String Name1 = Temp1.getTextContent();
 
-                //Coparing the Strings
+                //Comparing the Strings
                 if (Name1.equals("LAZYK")) {
                     Node Temp02 = BestellDatum.item(i);
                     String Datum01 = Temp02.getTextContent();
@@ -318,7 +318,36 @@ public class DomPrinter {
             //Output
             System.out.println("| GREAL: Von " + ts01.size() + " verschiedenen      |");
             System.out.println("| Mitarbeitern                    |");
-            
+
+            //Exercise Number 9 Welches Gewicht hat LETSS insgesamt verschicken lassen?
+            System.out.println("+---------------------------------+");
+            System.out.println("| Number 9:                       |");
+            System.out.println("+---------------------------------+");
+            /*
+                @KundenID2: Takes all node elements with the name CustomerID.
+                @Gewicht: Takes all node elements with the name Freight.
+                @dGewicht: Double, to Save the Freight
+                @tempID: Takes the current(for int i) the CustomerID value.
+                @name01: @tempID to String
+                @name02: @tempID02 to String
+            */
+            NodeList KundenID2 = doc.getElementsByTagName("CustomerID");
+            NodeList Gewicht = doc.getElementsByTagName("Freight");
+            double dGewicht = 0.0;
+            //Going through the elements
+            for (int i = 0, nodesize = bestellungen.getLength(); i < nodesize; i++) {
+                Node tempID = KundenID2.item(i);
+                String name01 = tempID.getTextContent();
+
+                //Comparing the Strings
+                if (name01.equals("LETSS")){
+                    String s01 = Gewicht.item(i).getTextContent();
+                    double Gewicht2 = Double.parseDouble(s01);
+                    dGewicht += Gewicht2;
+                }
+            }
+            System.out.println("| Das Gewicht beträgt: "+ dGewicht + "     |");
+            System.out.println("+---------------------------------+");
         }catch (SAXException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {
