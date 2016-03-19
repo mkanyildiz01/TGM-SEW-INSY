@@ -222,9 +222,24 @@ public class DomPrinter {
             System.out.println("+---------------------------------+");
             /*
                 @KundenID: Takes all node elements with the name customerID.
-                @Temp1: Goes through the value of KundenID.
-                @Name1: Is 1 value of Temp1(Always changing...for()).
                 @BestellDatum: Takes all node elements with the name OrderDate.
+                @i1: Interger
+                @DatumD: The final date(The latest Date)
+                @Temp1: Only the CustomerID value.
+                @Name1: String value of Temp1
+                @Temp02: The current Orders, Date
+                @Datum01: The hole Date of the Order into a String
+                @Datum02: The yy-mm-dd of the Date into a String
+                @stemp01: The Time Stamp of the Order
+                @DateTime01: @Datum02 and @stamp01 combined
+                @temp01: A DateFormate to parse in my new Date.
+                         (Its needed to compare different dates.)
+                @Temp03: @Temp02(its taking the next Date)
+                @Datum03: @Datum01
+                @Datum04: @Datum02
+                @stemp02: @stemp01
+                @DateTime02: @DateTime01
+                @temp02: @temp01
 
             */
             NodeList KundenID = doc.getElementsByTagName("CustomerID");
@@ -252,10 +267,11 @@ public class DomPrinter {
                         String stemp02 = Datum03.substring(12,19);
                         String DateTime02 = Datum04 + " " + stemp02;
                         Date temp02 = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss").parse(DateTime02);
+                        // Comparing both Dates and setting them to DatumD
                         if(temp01.after(temp02)){
                             DatumD = temp01;
                         }else{
-                            DatumD = temp01;
+                            DatumD = temp02;
                         }
 
                     }else{
