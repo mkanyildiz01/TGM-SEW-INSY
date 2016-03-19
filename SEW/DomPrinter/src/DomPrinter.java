@@ -15,6 +15,8 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -22,7 +24,6 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
 
 public class DomPrinter {
     public static void printNode(Node node, String prefix) {
@@ -77,28 +78,53 @@ public class DomPrinter {
             System.out.println("+---------------------------------+");
             System.out.println("| Number 1:                       |");
             System.out.println("+---------------------------------+");
+            System.out.println("| Eingabe:(1): Order + Customer   |");
+            System.out.println("| Eingabe:(2): Order              |");
+            System.out.println("+ Eingabe:(3): Customer           |");
+            System.out.println("+---------------------------------+");
             /*
                 @kunden: A Node List with all Customers-Elements
                 @buchungen: A Node List with all Orders-Elements
             */
             NodeList kunden = doc.getElementsByTagName("Customer");
             NodeList buchungen = doc.getElementsByTagName("Order");
-            System.out.println("| Es wurden "+buchungen.getLength()+" Buchungen getätigt!|");
+            BufferedReader br00 = new BufferedReader(new InputStreamReader(System.in));
+            int inputint00 = Integer.parseInt(br00.readLine());
+            // Comparing the input.
+            if(inputint00 == 1){
+                System.out.println("| Es wurden "+buchungen.getLength()+" Buchungen getätigt!|");
+                System.out.println("| Es existieren "+kunden.getLength()+" Kunden.         |");
+            }else if(inputint00 == 2){
+                System.out.println("| Es wurden "+buchungen.getLength()+" Buchungen getätigt!|");
+            }else if(inputint00 == 3){
+                System.out.println("| Es existieren "+kunden.getLength()+" Kunden.         |");
+            }else{
+                System.out.println("| Bitte geben Sie eine Zahl zw. 1-3 ein. |");
+                System.exit(0);
+            }
 
             //Exercise Number 2 Welche CustomerID besitzt der vierte Kunde?
             System.out.println("+---------------------------------+");
-            System.out.println("| Number 2:                       |");
+            System.out.println("| Number 2:CustomerID Eingabe(0-3)|");
             System.out.println("+---------------------------------+");
+            BufferedReader br01 = new BufferedReader(new InputStreamReader(System.in));
+            //String input01 = br01.readLine();
+            int inputint01 = Integer.parseInt(br01.readLine());
+            //Comparing the Input
+            if((inputint01 < 0) || (inputint01 > 3)){
+                System.out.println("Die Eingabe muss zwischen 0-3 sein!");
+            }
+            System.out.println("|---------------------------------|");
             /*
                 @node4: node4 is taking the 4th node of the customers.
                 @kunde: Is all of the 4th Element(All Nodes Included).
                 @name: Is taking the CustomerID as node and "converting" to a String.
 
             */
-            Node node4 = kunden.item(3);
+            Node node4 = kunden.item(inputint01);
             Element kunde = (Element)node4;
             String name = kunde.getAttribute("CustomerID");
-            System.out.println("|Die ID vom 4. Kunden lautet: "+name +"|");
+            System.out.println("|Die ID vom "+ inputint01 +" Kunden lautet: "+name +"|");
 
             //Exercise Number 3 Wie lautet die vollständige Adresse von der Firma Lazy K Kountry Store?
             System.out.println("+---------------------------------+");
@@ -232,7 +258,7 @@ public class DomPrinter {
                 @Datum02: The yy-mm-dd of the Date into a String
                 @stemp01: The Time Stamp of the Order
                 @DateTime01: @Datum02 and @stamp01 combined
-                @temp01: A DateFormate to parse in my new Date.
+                @temp01: A DateFormat to parse in a new Date.
                          (Its needed to compare different dates.)
                 @Temp03: @Temp02(its taking the next Date)
                 @Datum03: @Datum01
@@ -348,6 +374,24 @@ public class DomPrinter {
             }
             System.out.println("| Das Gewicht beträgt: "+ dGewicht + "     |");
             System.out.println("+---------------------------------+");
+
+            // Initialisieren des Elements language
+            Element language = doc.createElement("language");
+            // Schleife zum einfügen der Node in jedem Kunden
+            for (int i = 0, nodesize = KundenID.getLength(); i < nodesize; i++) {
+                KundenID.item(i).appendChild(language);
+            }
+            // Vorbereiten zum Speichern
+            DOMSource source = new DOMSource(doc);
+            // Ausgabe-Kanal festlegen
+            StreamResult result = new StreamResult(new File("output.xml"));
+            // Mit Hilfe der factory kann ein Transformer geholt werden
+            TransformerFactory tFactory = TransformerFactory.newInstance();
+            // Laden des Transformers
+            Transformer transformer = tFactory.newTransformer();
+            // Speichern der vorbereiteten Daten im Ausgabe-Kanal
+            transformer.transform(source, result);
+
         }catch (SAXException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {
@@ -355,6 +399,10 @@ public class DomPrinter {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (TransformerConfigurationException e) {
+            e.printStackTrace();
+        } catch (TransformerException e) {
             e.printStackTrace();
         }
     }
