@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -88,7 +89,9 @@ public class DomPrinter {
             */
             NodeList kunden = doc.getElementsByTagName("Customer");
             NodeList buchungen = doc.getElementsByTagName("Order");
+            //Buffer to save the input
             BufferedReader br00 = new BufferedReader(new InputStreamReader(System.in));
+            //User input
             int inputint00 = Integer.parseInt(br00.readLine());
             // Comparing the input.
             if(inputint00 == 1){
@@ -107,8 +110,10 @@ public class DomPrinter {
             System.out.println("+---------------------------------+");
             System.out.println("| Number 2:CustomerID Eingabe(0-3)|");
             System.out.println("+---------------------------------+");
+            //Buffer to save the input
             BufferedReader br01 = new BufferedReader(new InputStreamReader(System.in));
             //String input01 = br01.readLine();
+            //User input
             int inputint01 = Integer.parseInt(br01.readLine());
             //Comparing the Input
             if((inputint01 < 0) || (inputint01 > 3)){
@@ -128,10 +133,12 @@ public class DomPrinter {
 
             //Exercise Number 3 Wie lautet die vollständige Adresse von der Firma Lazy K Kountry Store?
             System.out.println("+---------------------------------+");
-            System.out.println("| Number 3:                       |");
+            System.out.println("| Number 3:Eingabe(0-3)           |");
             System.out.println("+---------------------------------+");
-            System.out.println("| 1.Addr 2.City 3.Region 4.Post   |");
-            System.out.println("| 5.Land                          |");
+            System.out.println("| (0) : Great Lakes Food Market   |");
+            System.out.println("| (1) : Hungry Coyote Import Store|");
+            System.out.println("| (2) : Lazy K Kountry Store      |");
+            System.out.println("| (3) : 12 Orchestra Terrace      |");
             System.out.println("+---------------------------------+");
             /*
                 @firmanr3: Is taking the Child Element of the 2. Element(Customers-Element)
@@ -141,7 +148,16 @@ public class DomPrinter {
                         System.out.println().)
 
             */
-            NodeList firmanr3 = doc.getElementsByTagName("FullAddress").item(2).getChildNodes();
+            //Buffer to save the input
+            BufferedReader br02 = new BufferedReader(new InputStreamReader(System.in));
+            //String input01 = br01.readLine();
+            //User input
+            int inputint02 = Integer.parseInt(br02.readLine());
+            //Comparing the Input
+            if((inputint02 < 0) || (inputint02 > 3)){
+                System.out.println("Die Eingabe muss zwischen 0-3 sein!");
+            }
+            NodeList firmanr3 = doc.getElementsByTagName("FullAddress").item(inputint02).getChildNodes();
             for (int i = 0, size = firmanr3.getLength(); i < size; i++) {
                 Node adresse = firmanr3.item(i);
                 String tmp1 = adresse.getTextContent();
