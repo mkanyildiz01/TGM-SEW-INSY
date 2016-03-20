@@ -75,6 +75,8 @@ public class DomPrinter {
                 Nodes are everything in XML:
                 Elements,Attributes,Values,Free-Spaces,Commentaries...
             */
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
             //Exercise Number 1 Wie viele Kunden und wie viele Bestellungen sind gespeichert?
             System.out.println("+---------------------------------+");
             System.out.println("| Number 1:                       |");
@@ -105,11 +107,13 @@ public class DomPrinter {
                 System.out.println("| Bitte geben Sie eine Zahl zw. 1-3 ein. |");
                 System.exit(0);
             }
-
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
             //Exercise Number 2 Welche CustomerID besitzt der vierte Kunde?
             System.out.println("+---------------------------------+");
             System.out.println("| Number 2:CustomerID Eingabe(0-3)|");
             System.out.println("+---------------------------------+");
+
             //Buffer to save the input
             BufferedReader br01 = new BufferedReader(new InputStreamReader(System.in));
             //String input01 = br01.readLine();
@@ -130,7 +134,8 @@ public class DomPrinter {
             Element kunde = (Element)node4;
             String name = kunde.getAttribute("CustomerID");
             System.out.println("|Die ID vom "+ inputint01 +" Kunden lautet: "+name +"|");
-
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
             //Exercise Number 3 Wie lautet die vollständige Adresse von der Firma Lazy K Kountry Store?
             System.out.println("+---------------------------------+");
             System.out.println("| Number 3:Eingabe(0-3)           |");
@@ -164,6 +169,8 @@ public class DomPrinter {
                 System.out.print(tmp1);
             }
 
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
             //Exercise Number 4 Gibt es Kunden, welche dieselbe dreistellige Vorwahl verwenden?
             System.out.println();
             System.out.println("+---------------------------------+");
@@ -197,6 +204,8 @@ public class DomPrinter {
                 System.out.println("+---------------------------------+");
             }
 
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
             //Exercise Number 5 Gibt es Kunden, die nicht aus den USA sind?
             System.out.println("| Number 5: Eingabe(Länder)z.b.USA|");
             System.out.println("+---------------------------------+");
@@ -221,12 +230,14 @@ public class DomPrinter {
             }
             System.out.println("| Es sind " + inputland + " Mitarbeiter aus: " + input01 +"   |");
 
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
             //Exercise Number 6 Welche(r) Kunde(n ) hatte(n ) die meisten Bestellungen?
             System.out.println("+---------------------------------+");
             System.out.println("| Number 6: Eingabe(1-2)          |");
             System.out.println("+---------------------------------+");
-            System.out.println("| Eingabe:(1): Die Meisten Bestell|");
-            System.out.println("| Eingabe:(2): Die Wenigsten Beste|");
+            System.out.println("| Eingabe:(1): Die Wenigsten Beste|");
+            System.out.println("| Eingabe:(2): Die Meisten Bestell|");
             System.out.println("+---------------------------------+");
             /*
                 @bestellungen: Takes all node elements with the name Order.
@@ -263,7 +274,7 @@ public class DomPrinter {
             //String input01 = br01.readLine();
             //User input
             int inputint04 = Integer.parseInt(br04.readLine());
-
+            //Comparing the User Input
             if(inputint04 == 1) {
                 Object firstKey = top01.keySet().toArray()[0];
                 Object valueForFirstKey = top01.get(firstKey);
@@ -276,10 +287,40 @@ public class DomPrinter {
                 System.out.println("Die Eingabe muss zwischen 1-2 sein!");
             }
 
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
             //Exercise Number 7 Wann war die letzte Bestellung von LAZYK?
             System.out.println("+---------------------------------+");
-            System.out.println("| Number 7:                       |");
+            System.out.println("| Number 7:Eingabe(1-4)           |");
             System.out.println("+---------------------------------+");
+            System.out.println("| (1) : GREAL                     |");
+            System.out.println("| (2) : HUNGC                     |");
+            System.out.println("| (3) : LAZYK                     |");
+            System.out.println("| (4) : LETSS                     |");
+            System.out.println("+---------------------------------+");
+
+            //Buffer to save the input
+            BufferedReader br05 = new BufferedReader(new InputStreamReader(System.in));
+            //String input01 = br01.readLine();
+            //User input
+            int inputint05 = Integer.parseInt(br05.readLine());
+            //@sinput05 the correct customer witch define's the user
+            String sinput05 = null;
+            //Comparing the User Input
+            // Comparing the input.
+            if(inputint05 == 1){
+                sinput05 = "GREAL";
+            }else if(inputint05 == 2){
+                sinput05 = "HUNGC";
+            }else if(inputint05 == 3){
+                sinput05 = "LAZYK";
+            }else if(inputint05 == 4){
+                sinput05 = "LETSS";
+            }else{
+                System.out.println("| Bitte geben Sie eine Zahl zw. 1-4 ein. |");
+                System.exit(0);
+            }
+
             /*
                 @KundenID: Takes all node elements with the name customerID.
                 @BestellDatum: Takes all node elements with the name OrderDate.
@@ -302,6 +343,8 @@ public class DomPrinter {
                 @temp02: @temp01
 
             */
+
+
             NodeList KundenID = doc.getElementsByTagName("CustomerID");
             NodeList BestellDatum = doc.getElementsByTagName("OrderDate");
             Integer i1 = 0;
@@ -311,7 +354,7 @@ public class DomPrinter {
                 String Name1 = Temp1.getTextContent();
 
                 //Comparing the Strings
-                if (Name1.equals("LAZYK")) {
+                if (Name1.equals(sinput05)) {
                     Node Temp02 = BestellDatum.item(i);
                     String Datum01 = Temp02.getTextContent();
                     String Datum02 = Datum01.substring(0,10);
@@ -319,7 +362,8 @@ public class DomPrinter {
                     String DateTime01 = Datum02 + " " + stemp01;
                     Date temp01 = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss").parse(DateTime01);
 
-
+                    //If its the first loop it takes the next element, because
+                    //it needs something to compare.
                     if(i1 == 0){
                         Node Temp03 = BestellDatum.item(i+1);
                         String Datum03 = Temp03.getTextContent();
@@ -327,6 +371,7 @@ public class DomPrinter {
                         String stemp02 = Datum03.substring(12,19);
                         String DateTime02 = Datum04 + " " + stemp02;
                         Date temp02 = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss").parse(DateTime02);
+
                         // Comparing both Dates and setting them to DatumD
                         if(temp01.after(temp02)){
                             DatumD = temp01;
@@ -344,12 +389,42 @@ public class DomPrinter {
                 }
 
             }
-            System.out.println("| " + DatumD + "    |");
+            System.out.println("| "+ sinput05 + ": " + DatumD + "|");
 
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
             //Exercise Number 8 Von wie vielen verschiedenen Mitarbeitern wurde GREAL bedient?
             System.out.println("+---------------------------------+");
-            System.out.println("| Number 8:                       |");
+            System.out.println("| Number 8:Eingabe(1-4)           |");
             System.out.println("+---------------------------------+");
+            System.out.println("| (1) : GREAL                     |");
+            System.out.println("| (2) : HUNGC                     |");
+            System.out.println("| (3) : LAZYK                     |");
+            System.out.println("| (4) : LETSS                     |");
+            System.out.println("+---------------------------------+");
+
+            //Buffer to save the input
+            BufferedReader br06 = new BufferedReader(new InputStreamReader(System.in));
+            //String input01 = br01.readLine();
+            //User input
+            int inputint06 = Integer.parseInt(br05.readLine());
+            //@sinput05 the correct customer witch define's the user
+            String sinput06 = null;
+            //Comparing the User Input
+            // Comparing the input.
+            if(inputint06 == 1){
+                sinput06 = "GREAL";
+            }else if(inputint06 == 2){
+                sinput06 = "HUNGC";
+            }else if(inputint06 == 3){
+                sinput06 = "LAZYK";
+            }else if(inputint06 == 4){
+                sinput06 = "LETSS";
+            }else{
+                System.out.println("| Bitte geben Sie eine Zahl zw. 1-4 ein. |");
+                System.exit(0);
+            }
+
             /*
                 @KundenID1: Takes all node elements with the name CustomerID.
                 @EmployeeID1: Takes all node elements with the name EmployeeID.
@@ -370,19 +445,48 @@ public class DomPrinter {
                 String name02 = tempID02.getTextContent();
                 //Comparing the customer value, if its equal it adds the value to the
                 //TreeSet
-                if (name01.equals("GREAL")) {
+                if (name01.equals(sinput06)) {
                     ts01.add(name02);
                 }
 
             }
             //Output
-            System.out.println("| GREAL: Von " + ts01.size() + " verschiedenen      |");
+            System.out.println("| "+ sinput06 +": Von " + ts01.size() + " verschiedenen      |");
             System.out.println("| Mitarbeitern                    |");
 
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
             //Exercise Number 9 Welches Gewicht hat LETSS insgesamt verschicken lassen?
             System.out.println("+---------------------------------+");
-            System.out.println("| Number 9:                       |");
+            System.out.println("| Number 9:Eingabe(1-4)           |");
             System.out.println("+---------------------------------+");
+            System.out.println("| (1) : GREAL                     |");
+            System.out.println("| (2) : HUNGC                     |");
+            System.out.println("| (3) : LAZYK                     |");
+            System.out.println("| (4) : LETSS                     |");
+            System.out.println("+---------------------------------+");
+
+            //Buffer to save the input
+            BufferedReader br07 = new BufferedReader(new InputStreamReader(System.in));
+            //String input01 = br01.readLine();
+            //User input
+            int inputint07 = Integer.parseInt(br05.readLine());
+            //@sinput05 the correct customer witch define's the user
+            String sinput07 = null;
+            //Comparing the User Input
+            // Comparing the input.
+            if(inputint07 == 1){
+                sinput07 = "GREAL";
+            }else if(inputint07 == 2){
+                sinput07 = "HUNGC";
+            }else if(inputint07 == 3){
+                sinput07 = "LAZYK";
+            }else if(inputint07 == 4){
+                sinput07 = "LETSS";
+            }else{
+                System.out.println("| Bitte geben Sie eine Zahl zw. 1-4 ein. |");
+                System.exit(0);
+            }
             /*
                 @KundenID2: Takes all node elements with the name CustomerID.
                 @Gewicht: Takes all node elements with the name Freight.
@@ -400,7 +504,7 @@ public class DomPrinter {
                 String name01 = tempID.getTextContent();
 
                 //Comparing the Strings
-                if (name01.equals("LETSS")){
+                if (name01.equals(sinput07)){
                     String s01 = Gewicht.item(i).getTextContent();
                     double Gewicht2 = Double.parseDouble(s01);
                     dGewicht += Gewicht2;
@@ -408,6 +512,9 @@ public class DomPrinter {
             }
             System.out.println("| Das Gewicht beträgt: "+ dGewicht + "     |");
             System.out.println("+---------------------------------+");
+
+            //--------------------------------------------------------------------------------------------------------\\
+            //--------------------------------------------------------------------------------------------------------\\
 
             // Initialisieren des Elements language
             Element language = doc.createElement("language");
