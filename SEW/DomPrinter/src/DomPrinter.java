@@ -70,7 +70,13 @@ public class DomPrinter {
             /*
                 A "new" file is been initialized.
             */
-            doc = builder.parse(new File("resources\\customerOrders.xml"));
+            System.out.println("+---------------------------------+");
+            System.out.println("| File Location:                  |");
+            System.out.println("+---------------------------------+");
+            //Buffer to save the input
+            BufferedReader brE = new BufferedReader(new InputStreamReader(System.in));
+            String inputE = brE.readLine();
+            doc = builder.parse(new File(inputE));
             /*
                 Nodes are everything in XML:
                 Elements,Attributes,Values,Free-Spaces,Commentaries...
