@@ -1,11 +1,9 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Random;
 
-/**
- * Created by Muhi_2 on 3/23/2016.
- */
 public class Person {
     ArrayList<String> arrayvn = new ArrayList<String>();
     ArrayList<String> arraynn = new ArrayList<String>();
@@ -18,13 +16,13 @@ public class Person {
         vnamenname();
         PrintWriter writer = null;
         writer = new PrintWriter("Person.sql", "UTF-8");
-        for(int i = 0;i<arraypnummer.size();i++) {
-            String s01 = arrayvn.get(i);
-            String s02 = arraynn.get(i);
-            int i01 = arraypnummer.get(i);
-            geschlecht();
+        for(int i = 0; i<arraypnummer.size(); i++) {
+                String s01 = arrayvn.get(i);
+                String s02 = arraynn.get(i);
+                int i01 = arraypnummer.get(i);
+                geschlecht();
 
-            GregorianCalendar gc = new GregorianCalendar();
+                GregorianCalendar gc = new GregorianCalendar();
 
             int year = randBetween(1975, 1995);
 
@@ -34,20 +32,21 @@ public class Person {
 
             gc.set(gc.DAY_OF_YEAR, dayOfYear);
 
-            System.out.println();
+                System.out.println();
 
-            writer.println("INSERT INTO Person VALUES( "+ i01 + " , '"+s01+ "' , '"+s02+"' , '" +arr[select]+"' , DATE '"+gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH)+"' );");
-
+                writer.println("INSERT INTO Person VALUES( " + i01 + " , '" + s01 + "' , '" + s02 + "' , '" + arr[select] + "' , DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' );");
+                writer.flush();
         }
         writer.close();
 
     }
 
     private void personnummer(){
-        for (int i = 1 ; i < 10001 ;i++){
+        for (int i = 1 ; i < 4000002 ;i++){
             arraypnummer.add(i);
         }
     }
+
     private void vnamenname(){
         BufferedReader br = null;
         try {
@@ -80,10 +79,6 @@ public class Person {
 
         // randomly selects an index from the arr
         select = random.nextInt(arr.length);
-    }
-    private void datum(){
-       // DATE '2006-03-05'
-
     }
 
     private int randBetween(int start, int end) {
