@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="629.0" prefWidth="641.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Kanyildiz.Controller">
+  <tabs>
+    <Tab text="Connection">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="611.0" prefWidth="636.0">
+               <children>
+                  <TextArea fx:id="toutput" layoutX="90.0" layoutY="425.0" prefHeight="159.0" prefWidth="531.0" promptText="Fehlermeldungen etc.">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextArea>
+                  <TextField fx:id="tport" layoutX="126.0" layoutY="142.0" prefHeight="31.0" prefWidth="169.0" promptText="z.b. 5432" text="5432">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="tdbname" layoutX="124.0" layoutY="289.0" prefHeight="31.0" prefWidth="169.0" promptText="z.b. fussballverein" text="fussballverein">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="tipaddress" layoutX="128.0" layoutY="97.0" prefHeight="31.0" prefWidth="169.0" promptText="z.b. 127.0.0.1" text="192.168.126.139">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="tusername" layoutX="442.0" layoutY="191.0" prefHeight="31.0" prefWidth="169.0" promptText="z.b. user01" text="user01">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="tuserpw" layoutX="442.0" layoutY="236.0" prefHeight="31.0" prefWidth="170.0" text="user01" />
+                  <Button fx:id="bconnect" layoutX="216.0" layoutY="356.0" mnemonicParsing="false" onAction="#OnClickConnect" prefHeight="42.0" prefWidth="197.0" text="Connect">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="91.0" layoutY="18.0" prefHeight="53.0" prefWidth="461.0" style="-fx-background-image: pics/01.jpg;" text="Connection to the Database!" textAlignment="CENTER">
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="19.0" layoutY="427.0" prefHeight="17.0" prefWidth="74.0" text="Output:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="99.0" text="IP-Address:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="78.0" layoutY="144.0" text="Port:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="340.0" layoutY="193.0" text="User-Name:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="291.0" text="DB-Name:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="340.0" layoutY="238.0" text="User-PW:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="12.0" layoutY="71.0" prefHeight="30.0" prefWidth="616.0" />
+                  <Separator layoutX="13.0" layoutY="396.0" prefHeight="30.0" prefWidth="615.0" />
+                  <Separator layoutX="11.0" layoutY="575.0" prefHeight="30.0" prefWidth="616.0" />
+                  <Separator layoutX="12.0" layoutY="170.0" prefHeight="30.0" prefWidth="615.0" />
+                  <Separator layoutX="12.0" layoutY="263.0" prefHeight="30.0" prefWidth="616.0" />
+                  <Separator layoutX="4.0" layoutY="86.0" orientation="VERTICAL" prefHeight="504.0" prefWidth="19.0" />
+                  <Separator layoutX="619.0" layoutY="87.0" orientation="VERTICAL" prefHeight="504.0" prefWidth="19.0" />
+                  <Separator layoutX="309.0" layoutY="84.0" orientation="VERTICAL" prefHeight="256.0" prefWidth="20.0" />
+                  <Separator layoutX="13.0" layoutY="324.0" prefHeight="30.0" prefWidth="616.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="READ-CRUD">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Separator layoutX="619.0" layoutY="81.0" orientation="VERTICAL" prefHeight="491.0" prefWidth="20.0" />
+                  <Separator layoutX="4.0" layoutY="82.0" orientation="VERTICAL" prefHeight="489.0" prefWidth="19.0" />
+                  <Separator layoutX="13.0" layoutY="380.0" prefHeight="30.0" prefWidth="615.0" />
+                  <Label layoutX="23.0" layoutY="397.0" prefHeight="17.0" prefWidth="74.0" text="Output:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="74.0" layoutY="14.0" prefHeight="53.0" prefWidth="461.0" style="-fx-background-image: pics/01.jpg;" text="C-READ-UD" textAlignment="CENTER">
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="treadquery" layoutX="108.0" layoutY="400.0" prefHeight="169.0" prefWidth="501.0" promptText="Fehlermeldungen etc.">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="bread" layoutX="223.0" layoutY="333.0" mnemonicParsing="false" onAction="#OnClickExecuteQueryRead" prefHeight="42.0" prefWidth="197.0" text="Execute Read Query">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="13.0" layoutY="556.0" prefHeight="30.0" prefWidth="615.0" />
+                  <Label layoutX="17.0" layoutY="92.0" text="SELECT:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="checkpersnr" disable="true" layoutX="116.0" layoutY="94.0" mnemonicParsing="false" selected="true" text="persnr">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="checkpos" disable="true" layoutX="209.0" layoutY="94.0" mnemonicParsing="false" selected="true" text="position">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="checkgehalt" disable="true" layoutX="310.0" layoutY="94.0" mnemonicParsing="false" selected="true" text="gehalt">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="checkvvon" disable="true" layoutX="401.0" layoutY="94.0" mnemonicParsing="false" selected="true" text="vertragvon">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="checkvbis" disable="true" layoutX="522.0" layoutY="95.0" mnemonicParsing="false" selected="true" text="vertragbis">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <Separator layoutX="100.0" layoutY="81.0" orientation="VERTICAL" prefHeight="238.0" prefWidth="11.0" />
+                  <Separator layoutX="196.0" layoutY="81.0" orientation="VERTICAL" prefHeight="181.0" prefWidth="6.0" />
+                  <Separator layoutX="298.0" layoutY="81.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="6.0" />
+                  <Separator layoutX="388.0" layoutY="81.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="6.0" />
+                  <Separator layoutX="508.0" layoutY="81.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="6.0" />
+                  <Label layoutX="19.0" layoutY="135.0" text="FROM:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="275.0" prefHeight="26.0" prefWidth="89.0" text="Full Query:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label disable="true" layoutX="120.0" layoutY="135.0" text="Spieler">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="17.0" layoutY="180.0" text="WHERE:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="18.0" layoutY="227.0" text="ORDER BY:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="12.0" layoutY="112.0" prefHeight="30.0" prefWidth="617.0" />
+                  <Separator layoutX="12.0" layoutY="200.0" prefHeight="30.0" prefWidth="617.0" />
+                  <Separator layoutX="11.0" layoutY="246.0" prefHeight="30.0" prefWidth="617.0" />
+                  <Separator layoutX="12.0" layoutY="156.0" prefHeight="30.0" prefWidth="617.0" />
+                  <Separator layoutX="12.0" layoutY="67.0" prefHeight="30.0" prefWidth="617.0" />
+                  <TextField fx:id="twhere" layoutX="209.0" layoutY="178.0" prefHeight="31.0" prefWidth="261.0" promptText="persnr &lt;= 100" text="persnr &lt;= 100">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="torderby" layoutX="209.0" layoutY="220.0" prefHeight="31.0" prefWidth="260.0" text="ASC persnr">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Separator layoutX="12.0" layoutY="304.0" prefHeight="30.0" prefWidth="617.0" />
+                  <CheckBox fx:id="checkwhere" layoutX="118.0" layoutY="184.0" mnemonicParsing="false" selected="true" text="True">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="checkorderby" layoutX="118.0" layoutY="227.0" mnemonicParsing="false" selected="true" text="True">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </CheckBox>
+                  <Label fx:id="lfullquery" alignment="TOP_LEFT" layoutX="113.0" layoutY="270.0" prefHeight="45.0" prefWidth="511.0" text="Label">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="READ-CRUD">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Separator layoutX="619.0" layoutY="81.0" orientation="VERTICAL" prefHeight="491.0" prefWidth="20.0" />
+                  <Separator layoutX="4.0" layoutY="82.0" orientation="VERTICAL" prefHeight="489.0" prefWidth="19.0" />
+                  <Separator layoutX="13.0" layoutY="380.0" prefHeight="30.0" prefWidth="615.0" />
+                  <Label layoutX="23.0" layoutY="397.0" prefHeight="17.0" prefWidth="74.0" text="Output:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="74.0" layoutY="14.0" prefHeight="53.0" prefWidth="461.0" style="-fx-background-image: pics/01.jpg;" text="CREATE-RUD" textAlignment="CENTER">
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="treadquery1" layoutX="108.0" layoutY="400.0" prefHeight="169.0" prefWidth="501.0" promptText="Fehlermeldungen etc.">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextArea>
+                  <Button fx:id="bread1" layoutX="221.0" layoutY="346.0" mnemonicParsing="false" onAction="#OnClickExecuteQueryRead" prefHeight="42.0" prefWidth="197.0" text="Execute Read Query">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutX="13.0" layoutY="556.0" prefHeight="30.0" prefWidth="615.0" />
+                  <Label layoutX="17.0" layoutY="92.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="130.0" layoutY="81.0" orientation="VERTICAL" prefHeight="249.0" prefWidth="11.0" />
+                  <Label layoutX="20.0" layoutY="91.0" text="INSERT INTO: ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="285.0" prefHeight="26.0" prefWidth="89.0" text="Full Query:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="128.0" text="VALUES:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="149.0" layoutY="161.0" text="PERSNR:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="12.0" layoutY="112.0" prefHeight="30.0" prefWidth="617.0" />
+                  <Separator layoutX="14.0" layoutY="180.0" prefHeight="30.0" prefWidth="617.0" />
+                  <Separator layoutX="11.0" layoutY="256.0" prefHeight="30.0" prefWidth="617.0" />
+                  <Separator layoutX="10.0" layoutY="140.0" prefHeight="30.0" prefWidth="617.0" />
+                  <Separator layoutX="13.0" layoutY="67.0" prefHeight="30.0" prefWidth="617.0" />
+                  <TextField fx:id="torderby1" layoutX="341.0" layoutY="158.0" prefHeight="24.0" prefWidth="260.0" text="ASC persnr">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Separator layoutX="12.0" layoutY="314.0" prefHeight="30.0" prefWidth="617.0" />
+                  <Label fx:id="lfullquery1" alignment="TOP_LEFT" layoutX="146.0" layoutY="280.0" prefHeight="45.0" prefWidth="478.0" text="Label">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tinsertinto" disable="true" layoutX="147.0" layoutY="90.0" prefHeight="31.0" prefWidth="225.0" promptText="persnr &lt;= 100" text="Spieler">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+  </tabs>
+</TabPane>

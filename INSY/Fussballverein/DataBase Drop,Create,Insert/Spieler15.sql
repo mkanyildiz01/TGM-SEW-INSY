@@ -1,0 +1,3 @@
+INSERT INTO Spieler VALUES( 3999998 , 'Rechter Stürmer' , 4753.67, DATE '1979-11-12' , DATE '2011-6-30' );
+INSERT INTO Spieler VALUES( 3999999 , 'Zentraler Stürmer' , 11267.33, DATE '1978-8-13' , DATE '2020-1-9' );
+INSERT INTO Spieler VALUES( 4000000 , 'Linker Stürmer' , 8339.87, DATE '1989-8-30' , DATE '2017-4-17' );
