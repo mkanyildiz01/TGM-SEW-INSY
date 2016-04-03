@@ -59,8 +59,31 @@ ORDER BY p.nname ASC;
 /*
 S5.) (Der fleißigste Spieler) Geben Sie den Vornamen und Nachnamen jenes Spielers aus, von dem die unter b) berechnete Gesamtdauer am größten ist, d.h.: dieser Spieler ist bei Spielen im Jahr 2015 insgesamt am längsten im Einsatz gewesen. Falls sich mehrere Spieler den ersten Platz teilen (d.h. sie kommen auf die gleiche Gesamtdauer), dann sollen diese in alphabetischer Reihenfolge (zuerst des Nachnamen, dann des Vornamen) geordnet werden. Der Fall, dass im Jahr 2015 überhaupt kein Spiel stattfand, darf ignoriert werden.
 Bemerkung: Berücksichtigen Sie bei Ihren Testdaten die Situation, dass sich zumindest 2 Spieler den ersten Platz teilen.
-
-S6.) Schreiben Sie CREATE und DROP Befehle für eine View, die alle Informationen über Trainer aus der Personen- und Trainer-Tabelle zusammenfügt, d.h.: sowohl die allgemeinen Personendaten (Personalnummer, Vorname, Nachname, Geschlecht und Geburtsdatum) als auch die Trainer-spezifischen Informationen (Gehalt sowie Beginn und Ende der Vertragsdauer). In Summe ist also folgende View erforderlich:
-    Trainer_view (persnr, vname, nname, geschlecht, gebdat, gehalt, von, bis).
-
 */
+
+/*
++-------------------------------------------------------------------------------------------------------------+
+|S6.) Schreiben Sie CREATE und DROP Befehle für eine View, die alle Informationen über Trainer aus der 		  |
+|Personen- und Trainer-Tabelle zusammenfügt, d.h.: sowohl die allgemeinen Personendaten 					  |
+|(Personalnummer, Vorname, Nachname, Geschlecht und Geburtsdatum) als auch die Trainer-spezifischen 		  |
+|Informationen (Gehalt sowie Beginn und Ende der Vertragsdauer). In Summe ist also folgende View erforderlich:|
+|Trainer_view (persnr, vname, nname, geschlecht, gebdat, gehalt, von, bis).									  |
++-------------------------------------------------------------------------------------------------------------+
+*/
+
+CREATE VIEW Trainer_view AS SELECT t.persnr,p.vname,p.nname,geschlecht,gebdat,gehalt,vertragsbeginn,vertragsende 
+FROM Trainer t 
+JOIN Person p ON  p.persnr = t.persnr;
+
+
+
+
+
+
+
+
+
+
+
+
+
