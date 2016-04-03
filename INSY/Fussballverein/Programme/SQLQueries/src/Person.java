@@ -15,7 +15,7 @@ public class Person {
         personnummer();
         vnamenname();
         PrintWriter writer0 = null;
-
+        writer0 = new PrintWriter("Person.sql", "UTF-8");
         writer0.println("INSERT INTO Person(persnr,vname,nname,geschlecht,gebdat) VALUES ");
         for(int i = 0; i <= arraypnummer.size(); i++) {
                 String s01 = arrayvn.get(i);

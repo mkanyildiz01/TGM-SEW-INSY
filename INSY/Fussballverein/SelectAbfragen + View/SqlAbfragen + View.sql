@@ -57,8 +57,15 @@ ORDER BY p.nname ASC;
 */
 
 /*
-S5.) (Der fleißigste Spieler) Geben Sie den Vornamen und Nachnamen jenes Spielers aus, von dem die unter b) berechnete Gesamtdauer am größten ist, d.h.: dieser Spieler ist bei Spielen im Jahr 2015 insgesamt am längsten im Einsatz gewesen. Falls sich mehrere Spieler den ersten Platz teilen (d.h. sie kommen auf die gleiche Gesamtdauer), dann sollen diese in alphabetischer Reihenfolge (zuerst des Nachnamen, dann des Vornamen) geordnet werden. Der Fall, dass im Jahr 2015 überhaupt kein Spiel stattfand, darf ignoriert werden.
-Bemerkung: Berücksichtigen Sie bei Ihren Testdaten die Situation, dass sich zumindest 2 Spieler den ersten Platz teilen.
++-----------------------------------------------------------------------------------------------------------+
+|S5.) (Der fleißigste Spieler) Geben Sie den Vornamen und Nachnamen jenes Spielers aus, von dem die unter 	|
+|b) berechnete Gesamtdauer am größten ist, d.h.: dieser Spieler ist bei Spielen im Jahr 2015 insgesamt am 	|
+|längsten im Einsatz gewesen. Falls sich mehrere Spieler den ersten Platz teilen (d.h. sie kommen auf die 	|
+|gleiche Gesamtdauer), dann sollen diese in alphabetischer Reihenfolge 										|
+|(zuerst des Nachnamen, dann des Vornamen) geordnet werden. Der Fall, dass im Jahr 2015 überhaupt kein Spiel| 
+|stattfand, darf ignoriert werden. Bemerkung: Berücksichtigen Sie bei Ihren Testdaten die Situation, 		|
+|dass sich zumindest 2 Spieler den ersten Platz teilen.														|
++-----------------------------------------------------------------------------------------------------------+
 */
 
 /*
@@ -70,12 +77,13 @@ Bemerkung: Berücksichtigen Sie bei Ihren Testdaten die Situation, dass sich zumi
 |Trainer_view (persnr, vname, nname, geschlecht, gebdat, gehalt, von, bis).									  |
 +-------------------------------------------------------------------------------------------------------------+
 */
+DROP VIEW Trainer_view CASCADE;
 
 CREATE VIEW Trainer_view AS SELECT t.persnr,p.vname,p.nname,geschlecht,gebdat,gehalt,vertragsbeginn,vertragsende 
 FROM Trainer t 
 JOIN Person p ON  p.persnr = t.persnr;
 
-
+DROP VIEW Trainer_view CASCADE;
 
 
 
