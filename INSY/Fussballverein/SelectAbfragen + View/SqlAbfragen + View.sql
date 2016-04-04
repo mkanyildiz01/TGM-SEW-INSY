@@ -18,6 +18,14 @@ Join FanClub fc On b.name = fc.name
 where fc.name != (Select name from Betreut where persnr = 1345463) and now() not between b.anfang and b.ende or b.persnr != null 
 order by sid asc;
 
+
+Select DISTINCT b.name as FanClubName,b.persnr,fc.sid 
+from Betreut b 
+Join FanClub fc On b.name = fc.name 
+where fc.name != (Select name from Betreut where persnr = 1345463) and now() not between 
+(SELECT anfang FROM Betreut WHERE persnr = 1345463) and (SELECT ende FROM Betreut WHERE persnr = 1345463) or b.persnr != null 
+order by sid asc;
+
 /*
 +---------------------------------------------------------------------------------------------------+
 |S2.) (Die eifrigsten Angestellten) Schreiben Sie eine SQL-Anfrage, die den Nachnamen und die 		|
@@ -45,6 +53,13 @@ ORDER BY p.nname ASC;
 +-----------------------------------------------------------------------------------------------------------+
 */
 
+SELECT  bezeichnung as mannschaft, s1.datum, vname as vorname, nname as nachname, dauer
+FROM Spiel s1
+JOIN Spielt s2 ON s2.datum = s1.datum
+JOIN Person p1 ON p1.persnr = s2.persnr
+WHERE s1.datum between '2015-01-01' and '2015-12-31';
+
+
 /*
 +-----------------------------------------------------------------------------------------------------------+
 |S4.) (Spieler-Ranking) Geben Sie für jeden Spieler den Vornamen und Nachnamen sowie die Gesamtdauer 		|
@@ -55,6 +70,14 @@ ORDER BY p.nname ASC;
 |(zuerst des Nachnamen, dann des Vornamen) sortiert werden.													|
 +-----------------------------------------------------------------------------------------------------------+
 */
+
+SELECT  sum(dauer) as gesammtdauer , vname as vorname, nname as nachname
+FROM Spiel s1
+JOIN Spielt s2 ON s2.datum = s1.datum
+JOIN Person p1 ON p1.persnr = s2.persnr
+WHERE s1.datum between '2015-01-01' and '2015-12-31'
+GROUP BY p1.persnr,vname,nname
+ORDER BY gesammtdauer DESC, nname ASC,vname ASC;
 
 /*
 +-----------------------------------------------------------------------------------------------------------+
@@ -67,6 +90,14 @@ ORDER BY p.nname ASC;
 |dass sich zumindest 2 Spieler den ersten Platz teilen.														|
 +-----------------------------------------------------------------------------------------------------------+
 */
+
+SELECT  sum(dauer) as gesammtdauer , vname as vorname, nname as nachname
+FROM Spiel s1
+JOIN Spielt s2 ON s2.datum = s1.datum
+JOIN Person p1 ON p1.persnr = s2.persnr
+WHERE s1.datum between '2015-01-01' and '2015-12-31' or 
+GROUP BY p1.persnr,vname,nname
+ORDER BY gesammtdauer DESC, nname ASC,vname ASC;
 
 /*
 +-------------------------------------------------------------------------------------------------------------+
