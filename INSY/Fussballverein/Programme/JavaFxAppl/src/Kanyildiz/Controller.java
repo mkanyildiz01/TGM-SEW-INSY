@@ -1,13 +1,11 @@
 package Kanyildiz;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class Controller {
     @FXML
@@ -23,25 +21,11 @@ public class Controller {
     @FXML
     private TextArea toutput;
     @FXML
-    private CheckBox checkpersnr;
+    private TableColumn tbpersn;
     @FXML
-    private CheckBox checkpos;
+    private TableColumn tbposition;
     @FXML
-    private CheckBox checkgehalt;
-    @FXML
-    private CheckBox checkvvon;
-    @FXML
-    private CheckBox checkvbis;
-    @FXML
-    private TextField tfullquery;
-    @FXML
-    private CheckBox checkwhere;
-    @FXML
-    private CheckBox checkorderby;
-    @FXML
-    private TextField twhere;
-    @FXML
-    private TextField torderby;
+    private TableColumn tbgehalt;
 
     public String h_;
     public String u_;
@@ -57,6 +41,11 @@ public class Controller {
     private boolean b7;
 
     public Connection connection;
+
+    private final ObservableList<Spieler> data =
+            FXCollections.observableArrayList(
+                    new Spieler("Jacob", "Smith", "jacob.smith@example.com")
+            );
 
     public void OnClickConnect() {
         String ip = tipaddress.getText();
@@ -83,49 +72,15 @@ public class Controller {
 
     public void OnClickExecuteQueryRead() {
 
-        b1 = checkpersnr.isSelected();
-        String s1 = "";
+        // b1 = checkpersnr.isSelected();
 
-        b2 = checkpos.isSelected();
-        String s2 = "";
-
-        b3 = checkgehalt.isSelected();
-        String s3 = "";
-
-        b4 = checkvvon.isSelected();
-        String s4 = "";
-
-        b5 = checkvbis.isSelected();
-        String s5 = "";
-
-        b6 = checkwhere.isSelected();
-        String s6 = "";
-
-        b7 = checkorderby.isSelected();
-        String s7 = "";
-
-        if (b1 == true) {
-            s1 = "persnr";
-        }
-        if (b2 == true) {
-            s2 = "position";
-        }
-        if (b3 == true) {
-            s3 = "gehalt";
-        }
-        if (b4 == true) {
-            s4 = "vertragvon";
-        }
-        if (b5 == true) {
-            s5 = "vertragbis";
-        }
-        if (b6 == true) {
-            s6 = twhere.getText();
-        }
-        if (b7 == true) {
-            s7 = torderby.getText();
-        }
-        CRUDHandler crudh01 = new CRUDHandler();
-        crudh01.select(s1, s2, s3, s4, s5,s6,s7, connection);
+        CRUDHandler ch01 = new CRUDHandler();
+        ch01.select(connection);
+        TableView01();
+    }
+    public void TableView01(){
+        String[] a1 = new String [1000];
+        a1[0] = "Hallo";
+        a1[1] = "Hallo1";
     }
 }

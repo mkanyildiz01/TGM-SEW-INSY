@@ -95,8 +95,9 @@ SELECT  sum(dauer) as gesammtdauer , vname as vorname, nname as nachname
 FROM Spiel s1
 JOIN Spielt s2 ON s2.datum = s1.datum
 JOIN Person p1 ON p1.persnr = s2.persnr
-WHERE s1.datum between '2015-01-01' and '2015-12-31' or 
+WHERE s1.datum between '2015-01-01' and '2015-12-31'
 GROUP BY p1.persnr,vname,nname
+HAVING (Select max(dauer) from Spielt) = sum(dauer)
 ORDER BY gesammtdauer DESC, nname ASC,vname ASC;
 
 /*
@@ -108,6 +109,7 @@ ORDER BY gesammtdauer DESC, nname ASC,vname ASC;
 |Trainer_view (persnr, vname, nname, geschlecht, gebdat, gehalt, von, bis).									  |
 +-------------------------------------------------------------------------------------------------------------+
 */
+
 DROP VIEW Trainer_view CASCADE;
 
 CREATE VIEW Trainer_view AS SELECT t.persnr,p.vname,p.nname,geschlecht,gebdat,gehalt,vertragsbeginn,vertragsende 
