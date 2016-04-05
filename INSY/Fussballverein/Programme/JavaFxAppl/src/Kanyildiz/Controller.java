@@ -40,26 +40,40 @@ public class Controller{
     @FXML
     private TextField tuserpw;
     @FXML
+    private TextField tzusatz01;
+    @FXML
     private TextArea toutput;
     @FXML
     private TableView tableviewread;
+
     @FXML
     private CheckBox checkpersnr;
     @FXML
-    private CheckBox checkposition;
+    private CheckBox checkpos;
     @FXML
     private CheckBox checkgehalt;
     @FXML
     private CheckBox checkvvon;
     @FXML
-    private CheckBox checkbis;
+    private CheckBox checkvbis;
+    @FXML
+    private CheckBox checkzusatz;
+    @FXML
+    private Label lfullquery;
 
     String spersnr = "";
     String spos = "";
     String sgehalt = "";
     String svvon = "";
     String svbis = "";
+    String szusatz = "";
 
+    Boolean b1 = false;
+    Boolean b2 = false;
+    Boolean b3 = false;
+    Boolean b4 = false;
+    Boolean b5 = false;
+    Boolean b6 = false;
 
     private ObservableList<ObservableList> data;
 
@@ -98,17 +112,30 @@ public class Controller{
 
         tableviewread.getItems().clear();
         tableviewread.getColumns().clear();
+        spersnr = "";
+        spos = "";
+        sgehalt = "";
+        svvon = "";
+        svbis = "";
+        szusatz = "";
+        b1 = false;
+        b2 = false;
+        b3 = false;
+        b4 = false;
+        b5 = false;
+        b6 = false;
+        CheckSelected();
         select(connection);
     }
 
     public void select(Connection con) {
         Connection c = con;
         data = FXCollections.observableArrayList();
-
+        lfullquery.setText("SELECT " + spersnr + spos + sgehalt + svvon+ svbis +" FROM Spieler" + " " + szusatz);
         try {
 
             //SQL FOR SELECTING ALL OF CUSTOMER
-            String SQL = "SELECT * from Spieler";
+            String SQL = "SELECT " + spersnr + spos + sgehalt + svvon+ svbis +" FROM Spieler" + " " + szusatz;
             ResultSet rs = c.createStatement().executeQuery(SQL);
             for(int i=0 ; i<rs.getMetaData().getColumnCount(); i++){
                 //We are using non property style for making dynamic table
@@ -141,15 +168,55 @@ public class Controller{
         }
     }
     private void CheckSelected(){
+
         if(checkpersnr.isSelected() == true) {
             spersnr = "persnr";
+            b1 = true;
         }
-        if(checkposition.isSelected() == true){
+        if(checkpos.isSelected() == true){
             spos = "position";
-        }
-        if(checkgehalt.isSelected() == true){
-            sgehalt = "gehalt";
+            b2 = true;
         }
 
+        if(checkgehalt.isSelected() == true){
+            sgehalt = "gehalt";
+            b3 = true;
+        }
+
+        if(checkvvon.isSelected() == true){
+            svvon = "vertragvon";
+            b4 = true;
+        }
+
+        if(checkvbis.isSelected() == true){
+            svbis = "vertragbis";
+            b5 = true;
+        }
+
+        if(checkzusatz.isSelected() == true) {
+            szusatz = tzusatz01.getText();
+            b6 = true;
+        }
+
+        if((b2 == true) && (b1 == true)){
+            spos = ",position";
+        }else if((b2 == true) && (b1 != true)){
+            spos = "position";
+        }
+        if((b3 == true) && ((b1 == true) ||(b2 == true))){
+            sgehalt = ",gehalt";
+        }else if((b3 == true) && (b1 != true) && (b2 != true)){
+            sgehalt = "gehalt";
+        }
+        if((b4 == true) && ((b1 == true) || (b2 == true)  || (b3 == true))){
+            svvon = ",vertragvon";
+        }else if((b4 == true) && (b1 != true) && (b2 != true)  && (b3 != true)){
+            svvon = "vertragvon";
+        }
+        if((b5 == true) && ((b1 == true) || (b2 == true)  || (b3 == true) || (b4 == true))){
+            svbis = ",vertragbis";
+        }else if((b5 == true) && (b1 != true) && (b2 != true)  && (b3 != true) && (b4 != true)){
+            svbis = "vertragbis";
+        }
     }
 }
