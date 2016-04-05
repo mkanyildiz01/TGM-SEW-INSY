@@ -45,7 +45,6 @@ public class Controller{
     private TextArea toutput;
     @FXML
     private TableView tableviewread;
-
     @FXML
     private CheckBox checkpersnr;
     @FXML
@@ -59,7 +58,9 @@ public class Controller{
     @FXML
     private CheckBox checkzusatz;
     @FXML
-    private Label lfullquery;
+    private TextField tqueryread;
+    @FXML
+    private Label loutputread;
 
     String spersnr = "";
     String spos = "";
@@ -125,13 +126,16 @@ public class Controller{
         b5 = false;
         b6 = false;
         CheckSelected();
+        if (CheckUserInputRead()== true){
+            return;
+        }
         select(connection);
     }
 
     public void select(Connection con) {
         Connection c = con;
         data = FXCollections.observableArrayList();
-        lfullquery.setText("SELECT " + spersnr + spos + sgehalt + svvon+ svbis +" FROM Spieler" + " " + szusatz);
+        tqueryread.setText("SELECT " + spersnr + spos + sgehalt + svvon+ svbis +" FROM Spieler" + " " + szusatz);
         try {
 
             //SQL FOR SELECTING ALL OF CUSTOMER
@@ -157,14 +161,13 @@ public class Controller{
                     row.add(rs.getString(i));
                 }
                 data.add(row);
-
             }
 
             //FINALLY ADDED TO TableView
             tableviewread.setItems(data);
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            loutputread.setText(e.getMessage());
         }
     }
     private void CheckSelected(){
@@ -218,5 +221,18 @@ public class Controller{
         }else if((b5 == true) && (b1 != true) && (b2 != true)  && (b3 != true) && (b4 != true)){
             svbis = "vertragbis";
         }
+    }
+    private boolean CheckUserInputRead(){
+        boolean bdrop = szusatz.contains("Drop");
+        boolean b2 = szusatz.contains("Update");
+        boolean b3 = szusatz.contains("Insert");
+        boolean b4 = szusatz.contains("Create");
+        boolean b5 = false;
+        if((bdrop != false) || (b2 != false) || (b3 != false) || (b4 != false)){
+            b5 = true;
+            loutputread.setText("Bitte nur Select Anweisungen eingeben.");
+        }
+        return b5;
+
     }
 }

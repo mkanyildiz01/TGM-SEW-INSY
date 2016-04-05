@@ -127,7 +127,7 @@
                         <Font size="36.0" />
                      </font>
                   </Label>
-                  <Button fx:id="bread" layoutX="212.0" layoutY="285.0" mnemonicParsing="false" onAction="#OnClickExecuteQueryRead" prefHeight="42.0" prefWidth="197.0" text="Execute Read Query">
+                  <Button fx:id="bread" layoutX="210.0" layoutY="315.0" mnemonicParsing="false" onAction="#OnClickExecuteQueryRead" prefHeight="42.0" prefWidth="197.0" text="Execute Read Query">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -163,17 +163,12 @@
                         <Font size="15.0" />
                      </font>
                   </CheckBox>
-                  <Separator layoutX="100.0" layoutY="81.0" orientation="VERTICAL" prefHeight="140.0" prefWidth="11.0" />
-                  <Separator layoutX="196.0" layoutY="81.0" orientation="VERTICAL" prefHeight="141.0" prefWidth="9.0" />
+                  <Separator layoutX="100.0" layoutY="81.0" orientation="VERTICAL" prefHeight="226.0" prefWidth="11.0" />
+                  <Separator layoutX="196.0" layoutY="81.0" orientation="VERTICAL" prefHeight="45.0" prefWidth="9.0" />
                   <Separator layoutX="298.0" layoutY="81.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="6.0" />
-                  <Separator layoutX="388.0" layoutY="81.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="6.0" />
+                  <Separator layoutX="388.0" layoutY="81.0" orientation="VERTICAL" prefHeight="91.0" prefWidth="6.0" />
                   <Separator layoutX="508.0" layoutY="81.0" orientation="VERTICAL" prefHeight="46.0" prefWidth="6.0" />
                   <Label layoutX="19.0" layoutY="135.0" text="FROM:">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label disable="true" layoutX="120.0" layoutY="135.0" text="Spieler">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -193,12 +188,27 @@
                      </font>
                   </CheckBox>
                   <TableView fx:id="tableviewread" editable="true" layoutX="19.0" layoutY="358.0" prefHeight="204.0" prefWidth="604.0" />
-                  <TextField fx:id="tzusatz01" layoutX="209.0" layoutY="180.0" prefHeight="30.0" prefWidth="409.0" />
+                  <TextField fx:id="tzusatz01" layoutX="209.0" layoutY="185.0" prefHeight="25.0" prefWidth="409.0" />
                   <Separator layoutX="13.0" layoutY="244.0" prefHeight="30.0" prefWidth="617.0" />
-                  <Label fx:id="lfullquery" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="227.0" prefHeight="27.0" prefWidth="599.0" textAlignment="CENTER">
+                  <Separator layoutX="196.0" layoutY="171.0" orientation="VERTICAL" prefHeight="48.0" prefWidth="9.0" />
+                  <TextField alignment="CENTER" disable="true" editable="false" layoutX="113.0" layoutY="133.0" prefHeight="31.0" prefWidth="272.0" text="Spieler">
                      <font>
                         <Font size="15.0" />
-                     </font></Label>
+                     </font>
+                  </TextField>
+                  <Label layoutX="20.0" layoutY="227.0" text="QUERY:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tqueryread" alignment="CENTER" disable="true" layoutX="112.0" layoutY="228.0" prefHeight="25.0" prefWidth="506.0" />
+                  <Label layoutX="18.0" layoutY="269.0" text="OUTPUT:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="13.0" layoutY="293.0" prefHeight="30.0" prefWidth="615.0" />
+                  <Label fx:id="loutputread" layoutX="109.0" layoutY="266.0" prefHeight="38.0" prefWidth="507.0" />
                </children></AnchorPane>
       </content>
     </Tab>
@@ -214,7 +224,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="74.0" layoutY="14.0" prefHeight="53.0" prefWidth="461.0" style="-fx-background-image: pics/01.jpg;" text="CREATE-RUD" textAlignment="CENTER">
+                  <Label alignment="CENTER" layoutX="74.0" layoutY="14.0" prefHeight="53.0" prefWidth="461.0" style="-fx-background-image: pics/01.jpg;" text="CRUD - INSERT" textAlignment="CENTER">
                      <effect>
                         <Lighting>
                            <bumpInput>
