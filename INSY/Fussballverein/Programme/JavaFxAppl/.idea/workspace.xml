@@ -61,42 +61,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="228" column="48" selection-start-line="228" selection-start-column="48" selection-end-line="228" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-                <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-                <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-                <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-                <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InsertTab.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Kanyildiz/InsertTab.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1459858839657" expanded="true" signature="760:844" placeholder="INSERT INTO Person... " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -141,7 +111,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1921" />
+    <option name="width" value="1180" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -688,12 +658,12 @@
       <workItem from="1459799236652" duration="5140000" />
       <workItem from="1459834039032" duration="2976000" />
       <workItem from="1459845860142" duration="4194000" />
-      <workItem from="1459853562211" duration="4729000" />
+      <workItem from="1459853562211" duration="12190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43863000" />
+    <option name="totallyTimeSpent" value="51324000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -705,7 +675,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1921" height="1040" extended-state="0" />
+    <frame x="0" y="0" width="1180" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -713,13 +683,13 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819384" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36123347" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25110132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124126814" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20625" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -787,11 +757,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -810,11 +780,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -834,11 +804,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -859,11 +829,11 @@
           <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -893,11 +863,11 @@
           <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -916,11 +886,11 @@
           <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -939,11 +909,11 @@
           <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -963,11 +933,11 @@
           <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -987,11 +957,11 @@
           <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -1011,11 +981,11 @@
           <caret line="74" column="23" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -1034,11 +1004,11 @@
           <caret line="108" column="19" selection-start-line="108" selection-start-column="19" selection-end-line="108" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -1058,11 +1028,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -1092,11 +1062,11 @@
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
           </folding>
         </state>
       </provider>
@@ -1111,13 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://Z:/Java/jdk1.8.0_74/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Person.java" />
     <entry file="jar://Z:/Java/jdk1.8.0_74/javafx-src.zip!/javafx/util/Callback.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1128,25 +1091,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Kanyildiz/CRUDHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Spieler.java" />
-    <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Window01.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="51" column="91" selection-start-line="51" selection-start-column="91" selection-end-line="51" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/JavaFxAppl/Kanyildiz/Window01.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -1158,29 +1102,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Window01.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="228" column="48" selection-start-line="228" selection-start-column="48" selection-end-line="228" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1459858473117" expanded="true" signature="3844:3851" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3896" placeholder="SELECT missi... " />
-            <marker date="1459858473117" expanded="true" signature="3844:3910" placeholder="SELECT * fro... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3916" placeholder="SELECT missi... Spieler" />
-            <marker date="1459858473117" expanded="true" signature="3844:3919" placeholder="SELECT missi... Spieler" />
-          </folding>
+        <state relative-caret-position="113">
+          <caret line="294" column="49" selection-start-line="294" selection-start-column="49" selection-end-line="294" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://Z:/Java/jdk1.8.0_74/javafx-src.zip!/com/sun/glass/ui/win/WinApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="190" column="0" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Kanyildiz/InsertTab.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="357">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1459858839657" expanded="true" signature="760:844" placeholder="INSERT INTO Person... " />
+            <marker date="1459871000114" expanded="true" signature="792:883" placeholder="INSERT INTO Person... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="247" column="39" selection-start-line="247" selection-start-column="39" selection-end-line="247" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1459867787904" expanded="true" signature="3956:3963" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4008" placeholder="SELECT missi... " />
+            <marker date="1459867787904" expanded="true" signature="3956:4022" placeholder="SELECT * fro... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4028" placeholder="SELECT missi... Spieler" />
+            <marker date="1459867787904" expanded="true" signature="3956:4031" placeholder="SELECT missi... Spieler" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Kanyildiz/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

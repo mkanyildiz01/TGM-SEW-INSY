@@ -1,32 +1,20 @@
 package Kanyildiz;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import javafx.application.Application;
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
-import javafx.stage.Stage;
 import javafx.util.Callback;
-import javafx.application.Application;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.VBox;
-import javafx.util.Callback;
 
-import java.awt.event.ActionEvent;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 
 public class Controller{
     @FXML
@@ -61,6 +49,16 @@ public class Controller{
     private TextField tqueryread;
     @FXML
     private Label loutputread;
+    @FXML
+    private TextField tpersnr;
+    @FXML
+    private ChoiceBox cbposition;
+    @FXML
+    private TextField tgehalt;
+    @FXML
+    private DatePicker dpvertragvon;
+    @FXML
+    private DatePicker dpvertragbis;
 
     String spersnr = "";
     String spos = "";
@@ -94,6 +92,12 @@ public class Controller{
         this.p_ = tuserpw.getText();
         this.h_ = ip + ":" + port;
         DatabaseConnection();
+        cbposition.setItems(FXCollections.observableArrayList("Linker Stürmer","Zentraler Stürmer",
+                "Rechter Stürmer", "Linker Außenstürmer",
+                "Zentral Mittelfeld","Rechter Außsenstürmer",
+                "Linker Verteidiger", "Innen Verteidiger Links",
+                "Innen Verteidiger Rechts", "Rechter Verteidiger",
+                "Torhüter"));
     }
 
     public void DatabaseConnection() {
@@ -233,6 +237,15 @@ public class Controller{
             loutputread.setText("Bitte nur Select Anweisungen eingeben.");
         }
         return b5;
-
+    }
+    public void CheckButtonInsert(){
+        String temp01 = tpersnr.getText();
+        Integer PersnrEingabe = Integer.parseInt(temp01);
+        String PositionEingabe = (String) cbposition.getValue();
+        Double Gehalt = Double.parseDouble(tgehalt.getText());
+        Date VertragvonEinfabe = java.sql.Date.valueOf(dpvertragvon.getValue());
+        Date VertragbisEinfabe = java.sql.Date.valueOf(dpvertragbis.getValue());
+        InsertTab it = new InsertTab();
+        it.insert(PersnrEingabe,PositionEingabe,Gehalt,VertragvonEinfabe,VertragbisEinfabe,connection);
     }
 }
