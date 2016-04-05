@@ -1,13 +1,34 @@
 package Kanyildiz;
-
+import java.sql.Connection;
+import java.sql.ResultSet;
+import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+import javafx.util.Callback;
+import javafx.application.Application;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 
+import java.awt.event.ActionEvent;
 import java.sql.*;
 
-public class Controller {
+public class Controller{
     @FXML
     private TextField tipaddress;
     @FXML
@@ -21,31 +42,34 @@ public class Controller {
     @FXML
     private TextArea toutput;
     @FXML
-    private TableColumn tbpersn;
+    private TableView tableviewread;
     @FXML
-    private TableColumn tbposition;
+    private CheckBox checkpersnr;
     @FXML
-    private TableColumn tbgehalt;
+    private CheckBox checkposition;
+    @FXML
+    private CheckBox checkgehalt;
+    @FXML
+    private CheckBox checkvvon;
+    @FXML
+    private CheckBox checkbis;
+
+    String spersnr = "";
+    String spos = "";
+    String sgehalt = "";
+    String svvon = "";
+    String svbis = "";
+
+
+    private ObservableList<ObservableList> data;
 
     public String h_;
     public String u_;
     public String p_;
     public String d_;
 
-    private boolean b1;
-    private boolean b2;
-    private boolean b3;
-    private boolean b4;
-    private boolean b5;
-    private boolean b6;
-    private boolean b7;
-
     public Connection connection;
 
-    private final ObservableList<Spieler> data =
-            FXCollections.observableArrayList(
-                    new Spieler("Jacob", "Smith", "jacob.smith@example.com")
-            );
 
     public void OnClickConnect() {
         String ip = tipaddress.getText();
@@ -72,15 +96,60 @@ public class Controller {
 
     public void OnClickExecuteQueryRead() {
 
-        // b1 = checkpersnr.isSelected();
-
-        CRUDHandler ch01 = new CRUDHandler();
-        ch01.select(connection);
-        TableView01();
+        tableviewread.getItems().clear();
+        tableviewread.getColumns().clear();
+        select(connection);
     }
-    public void TableView01(){
-        String[] a1 = new String [1000];
-        a1[0] = "Hallo";
-        a1[1] = "Hallo1";
+
+    public void select(Connection con) {
+        Connection c = con;
+        data = FXCollections.observableArrayList();
+
+        try {
+
+            //SQL FOR SELECTING ALL OF CUSTOMER
+            String SQL = "SELECT * from Spieler";
+            ResultSet rs = c.createStatement().executeQuery(SQL);
+            for(int i=0 ; i<rs.getMetaData().getColumnCount(); i++){
+                //We are using non property style for making dynamic table
+                final int j = i;
+                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i+1));
+                col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){
+                    public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {
+                        return new SimpleStringProperty(param.getValue().get(j).toString());
+                    }
+                });
+                tableviewread.getColumns().addAll(col);
+            }
+
+            while(rs.next()){
+                //Iterate Row
+                ObservableList<String> row = FXCollections.observableArrayList();
+                for(int i=1 ; i<=rs.getMetaData().getColumnCount(); i++){
+                    //Iterate Column
+                    row.add(rs.getString(i));
+                }
+                data.add(row);
+
+            }
+
+            //FINALLY ADDED TO TableView
+            tableviewread.setItems(data);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    private void CheckSelected(){
+        if(checkpersnr.isSelected() == true) {
+            spersnr = "persnr";
+        }
+        if(checkposition.isSelected() == true){
+            spos = "position";
+        }
+        if(checkgehalt.isSelected() == true){
+            sgehalt = "gehalt";
+        }
+
     }
 }

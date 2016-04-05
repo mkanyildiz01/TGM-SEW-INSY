@@ -183,7 +183,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="18.0" layoutY="227.0" text="ORDER BY:">
+                  <Label layoutX="18.0" layoutY="227.0" text="ZUSATZ:">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -198,7 +198,7 @@
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="torderby" layoutX="209.0" layoutY="220.0" prefHeight="31.0" prefWidth="260.0" text="ASC persnr">
+                  <TextField fx:id="torderby" layoutX="209.0" layoutY="220.0" prefHeight="31.0" prefWidth="260.0" promptText="LIMIT 10" text="LIMIT 10">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -213,15 +213,7 @@
                         <Font size="15.0" />
                      </font>
                   </CheckBox>
-                  <TableView fx:id="tableviewread" editable="true" layoutX="17.0" layoutY="320.0" prefHeight="266.0" prefWidth="604.0">
-                    <columns>
-                      <TableColumn fx:id="tbpersn" prefWidth="110.0" text="persnr" />
-                      <TableColumn fx:id="tbposition" prefWidth="144.0" text="position" />
-                        <TableColumn fx:id="tbgehalt" prefWidth="83.0" text="gehalt" />
-                        <TableColumn fx:id="tableviewvertragvon" prefWidth="131.0" text="vertragvon" />
-                        <TableColumn fx:id="tableviewvertragbis" prefWidth="135.0" text="vertragbis" />
-                    </columns>
-                  </TableView>
+                  <TableView fx:id="tableviewread" editable="true" layoutX="19.0" layoutY="320.0" prefHeight="242.0" prefWidth="604.0" />
                </children></AnchorPane>
       </content>
     </Tab>
