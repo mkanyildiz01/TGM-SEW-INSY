@@ -1,9 +1,0 @@
-Zwischenstand:
-ERD                 :   Fertig
-RM                  :   Fertig
-Create-Script       :   Fertig
-Inserts             :   Fertig
-Select-Abfragen     :   Fertig
-JDBC-Connection     :   Fertig
-JavaFxProgramm      :   Update und Deleat Fehlen, Dokummentation Fehlt, Java Doc File Fehlt, Build-Make Fehlt
-Protokoll           :   Fehler müssen Ausgebessert werden, Select Abfragen-Dokumentation Fehlt,JavaFx Dokumentation Fehlt
