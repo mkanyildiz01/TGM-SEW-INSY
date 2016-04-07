@@ -14,19 +14,18 @@ public class Standort {
     public Standort() throws FileNotFoundException, UnsupportedEncodingException {
         PrintWriter writer = null;
         writer = new PrintWriter("Standort.sql", "UTF-8");
-        writer.println("INSERT INTO Standort(sid,land,ort,plz) VALUES ");
 
         sid();
         land();
         plz();
         ort();
 
-        for(int i = 0; i < 269090; i++) {
+        for(int i = 0; i <= 269091; i++) {
             int i01 = arraypnummer.get(i);
             String s01 = arrayland.get(i);
             String s02 = arrayort.get(i);
             String s03 = arrayplz.get(i);
-            writer.println("( " + i01 +  ", '" + s01 + "' , '" + s02+ "' , '"+ s03 + "' ),");
+            writer.println("INSERT INTO Standort VALUES ( " + i01 +  ", '" + s01 + "' , '" + s02+ "' , '"+ s03 + "' );");
 
             writer.flush();
 
@@ -39,22 +38,22 @@ public class Standort {
 
 
     private void sid(){
-        for (int i = 1 ; i < 269091 ;i++){
+        for (int i = 1 ; i <= 269091 ;i++){
             arraypnummer.add(i);
         }
     }
     private void land(){
-        for (int i = 1 ; i < 269091 ;i++){
+        for (int i = 1 ; i <= 269091 ;i++){
             arrayland.add("Land " + i);
         }
     }
     private void ort(){
-        for (int i = 1 ; i < 269091 ;i++){
+        for (int i = 1 ; i <= 269091 ;i++){
             arrayort.add("Ort " + i);
         }
     }
     private void plz(){
-        for (int i = 1 ; i < 269091 ;i++){
+        for (int i = 1 ; i <= 269091 ;i++){
             arrayplz.add("Plz " + i);
         }
     }

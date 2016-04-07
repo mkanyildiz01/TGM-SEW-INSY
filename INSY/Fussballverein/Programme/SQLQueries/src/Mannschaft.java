@@ -18,7 +18,6 @@ public class Mannschaft {
 
         PrintWriter writer = null;
         writer = new PrintWriter("Mannschaft.sql", "UTF-8");
-        writer.println("INSERT INTO Mannschaft(bezeichnung,klasse,neachstesspiel) VALUES ");
 
         for(int i = 0; i< arraybezeichnung.size(); i++) {
 
@@ -31,7 +30,7 @@ public class Mannschaft {
             int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
             gc.set(gc.DAY_OF_YEAR, dayOfYear);
 
-            writer.println("( '" + s01 +"', '"+ arr[select] + "' , DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) +"' ),");
+            writer.println("INSERT INTO Mannschaft VALUES( '" + s01 +"', '"+ arr[select] + "' , DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) +"' );");
             writer.flush();
 
         }

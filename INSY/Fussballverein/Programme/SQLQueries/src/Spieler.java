@@ -7,7 +7,7 @@ import java.util.GregorianCalendar;
 public class Spieler {
 
     String[] arraygehalt;
-    int[] arraypnummer;
+    ArrayList<Integer> arraypnummer = new ArrayList<Integer>();
     ArrayList<String> arraypos = new ArrayList<String>();
 
     String [] arrayposition = { "Linker Stürmer","Zentraler Stürmer",
@@ -21,31 +21,30 @@ public class Spieler {
 
         PrintWriter writer = null;
         writer = new PrintWriter("Spieler.sql", "UTF-8");
-        writer.println("INSERT INTO Spieler(persnr,position,gehalt,vertragvon,vertragbis) VALUES ");
 
         personnummer();
         position();
         gehalt();
 
         for (int i = 0; i < 1400003; i++) {
-            int i01 = arraypnummer[i];
+            int i01 = arraypnummer.get(i);
             String s01 = arraygehalt[i];
             String s02 = arraypos.get(i);
             GregorianCalendar gc = new GregorianCalendar();
 
-            int year = randBetween(1975, 1995);
+            int year = randBetween(2010, 2012);
             gc.set(gc.YEAR, year);
             int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
             gc.set(gc.DAY_OF_YEAR, dayOfYear);
 
-            writer.print("( " + i01 + " , '" + s02 + "' , " + s01 + ", DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' , ");
+            writer.print("INSERT INTO Spieler VALUES( " + i01 + " , '" + s02 + "' , " + s01 + ", DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' , ");
 
-            int year2 = randBetween(2010, 2020);
+            int year2 = randBetween(2013, 2016);
             gc.set(gc.YEAR, year2);
             int dayOfYear2 = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
             gc.set(gc.DAY_OF_YEAR, dayOfYear2);
 
-            writer.println("DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' ),");
+            writer.println("DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' );");
             writer.flush();
 
         }
@@ -57,12 +56,10 @@ public class Spieler {
     }
 
     private void personnummer(){
-
-        arraypnummer = new int[4000000];
-        int i1 = 2599998;
-        for (int i = 0 ; i <= 1400003 ;i++){
-            arraypnummer[i] = i1;
-            i1++;
+        for (int i = 5209994; i <= 8010000;i++){
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
     private void position(){

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Angestellter {
 
-    int[] arraypnummer;
+    ArrayList<Integer> arraypnummer = new ArrayList<Integer>();
     int[] arrayueberstunden;
     String[] arraygehalt;
     String[] arrayemail;
@@ -14,18 +14,16 @@ public class Angestellter {
 
         PrintWriter writer = null;
         writer = new PrintWriter("Angestellter.sql", "UTF-8");
-        writer.println("INSERT INTO Angestellter(persnr,gehalt,ueberstunden,email) VALUES ");
         personnummer();
         gehalt();
         ueberstunden();
         email();
-
-        for(int i = 0; i<arraypnummer.length-1; i++) {
-            int i01 = arraypnummer[i];
+        for(int i = 0; i<1000000; i++) {
+            int i01 = arraypnummer.get(i);
             int i02 = arrayueberstunden[i];
             String s01 = arrayemail[i];
             String s02 = arraygehalt[i];
-            writer.println("( " + i01 + " , " + s02 + " , " + i02 + " , '" + s01 +"' ),");
+            writer.println("INSERT INTO Angestellter VALUES( " + i01 + " , " + s02 + " , " + i02 + " , '" + s01 +"' );");
             writer.flush();
 
         }
@@ -35,12 +33,10 @@ public class Angestellter {
     }
 
     private void personnummer(){
-
-        arraypnummer = new int[1000001];
-        int i1 = 1345452;
-        for (int i = 0 ; i <= 1000000 ;i++){
-            arraypnummer[i] = i1;
-            i1++;
+        for (int i = 2700901 ; i <= 4700901;i++){
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
     private void gehalt(){

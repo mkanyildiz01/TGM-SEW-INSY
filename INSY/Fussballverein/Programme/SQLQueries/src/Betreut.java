@@ -6,19 +6,18 @@ import java.util.GregorianCalendar;
 
 public class Betreut {
 
-    int[] arraypnummer;
+    ArrayList<Integer> arraypnummer = new ArrayList<Integer>();
     ArrayList<String> arrayname = new ArrayList<String>();
 
     public Betreut() throws FileNotFoundException, UnsupportedEncodingException {
         PrintWriter writer = null;
         writer = new PrintWriter("Betreut.sql", "UTF-8");
-        writer.println("INSERT INTO Betreut(persnr,name,anfang,ende) VALUES ");
 
         personnummer();
         name();
 
-        for(int i = 0; i<arraypnummer.length-1; i++) {
-            int i01 = arraypnummer[i];
+        for(int i = 0; i<1000000; i++) {
+            int i01 = arraypnummer.get(i);
             String s01 = arrayname.get(i);
 
             GregorianCalendar gc = new GregorianCalendar();
@@ -32,7 +31,7 @@ public class Betreut {
             gc.set(gc.DAY_OF_YEAR, dayOfYear);
 
 
-            writer.print("( " + i01 +" , '" + s01 +"' , DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' ,");
+            writer.print("INSERT INTO Betreut VALUES( " + i01 +" , '" + s01 +"' , DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' ,");
 
             int year2 = randBetween(1975, 2020);
 
@@ -42,7 +41,7 @@ public class Betreut {
 
             gc.set(gc.DAY_OF_YEAR, dayOfYear2);
 
-            writer.println("DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' ),");
+            writer.println("DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' );");
 
             writer.flush();
 
@@ -57,12 +56,10 @@ public class Betreut {
 
 
     private void personnummer(){
-
-        arraypnummer = new int[1000001];
-        int i1 = 1345452;
-        for (int i = 0 ; i <= 1000000 ;i++){
-            arraypnummer[i] = i1;
-            i1++;
+        for (int i = 2700901 ; i <= 4700901;i++){
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
     private void name() {

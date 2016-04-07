@@ -8,16 +8,16 @@ public class Person {
     ArrayList<String> arrayvn = new ArrayList<String>();
     ArrayList<String> arraynn = new ArrayList<String>();
     ArrayList<Integer> arraypnummer = new ArrayList<Integer>();
-    String [] arr = {"W", "M", "N"};
+    String [] arr = {"M"};
+    //String [] arr = {"W", "M", "N"};
     int select;
     public Person() throws FileNotFoundException, UnsupportedEncodingException {
-
+        try {
         personnummer();
         vnamenname();
         PrintWriter writer0 = null;
         writer0 = new PrintWriter("Person.sql", "UTF-8");
-        writer0.println("INSERT INTO Person(persnr,vname,nname,geschlecht,gebdat) VALUES ");
-        for(int i = 0; i <= arraypnummer.size(); i++) {
+        for(int i = 0; i <= 4000000; i++) {
                 String s01 = arrayvn.get(i);
                 String s02 = arraynn.get(i);
                 int i01 = arraypnummer.get(i);
@@ -25,7 +25,7 @@ public class Person {
 
                 GregorianCalendar gc = new GregorianCalendar();
 
-            int year = randBetween(1975, 1995);
+            int year = randBetween(1985, 1995);
 
             gc.set(gc.YEAR, year);
 
@@ -35,16 +35,20 @@ public class Person {
 
                 System.out.println();
 
-                writer0.println("( " + i01 + " , '" + s01 + "' , '" + s02 + "' , '" + arr[select] + "' , DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' ),");
+                writer0.println("INSERT INTO Person VALUES( " + i01 + " , '" + s01 + "' , '" + s02 + "' , '" + arr[select] + "' , DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' );");
                 writer0.flush();
         }
         writer0.close();
-
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void personnummer(){
-        for (int i = 1 ; i < 4000002 ;i++){
-            arraypnummer.add(i);
+        for (int i = 10000 ; i <= 8010001 ;i++) {
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
 

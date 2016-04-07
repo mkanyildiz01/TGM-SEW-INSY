@@ -18,7 +18,7 @@ public class SpielerEigenschaft {
         PrintWriter writer = null;
         writer = new PrintWriter("SpielerEigenschaft.sql", "UTF-8");
 
-        for (int i = 0; i < arraypnummer.size(); i++) {
+        for (int i = 0; i < 1400003; i++) {
             int i01 = arraypnummer.get(i);
             String s01 = arraybezeichnung.get(i);
             String s02 = arraykapitean.get(i);
@@ -30,8 +30,10 @@ public class SpielerEigenschaft {
     }
 
     private void personnummer(){
-        for (int i = 2599998 ; i <= 4000001 ;i++){
-            arraypnummer.add(i);
+        for (int i = 5209994; i <= 8010000;i++){
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
     private void bezeichnung(){

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class TrainerEigenschaft {
-    int[] arraypnummer;
+    ArrayList<Integer> arraypnummer = new ArrayList<Integer>();
     ArrayList<String> arraybezeichnung = new ArrayList<String>();
     ArrayList<String> arraychef = new ArrayList<String>();
     ArrayList<String> arrayas = new ArrayList<String>();
@@ -16,26 +16,23 @@ public class TrainerEigenschaft {
 
         PrintWriter writer = null;
         writer = new PrintWriter("TrainerEigenschaft.sql", "UTF-8");
-        writer.println("INSERT INTO TrainerEigenschaft(persnr,bezeichnung,istcheftrainer,istassistent) VALUES ");
 
-        for (int i = 0; i < arraypnummer.length-1; i++) {
-            int i01 = arraypnummer[i];
+        for (int i = 0; i < 1000000; i++) {
+            int i01 = arraypnummer.get(i);
             String s01 = arraybezeichnung.get(i);
             String s02 = arraychef.get(i);
             String s03 = arrayas.get(i);
-            writer.println("( " + i01 + " , '" + s01 + "' , '"+ s02 +"' , '" + s03 +"' ),");
+            writer.println("INSERT INTO TrainerEigenschaft VALUES( " + i01 + " , '" + s01 + "' , '"+ s02 +"' , '" + s03 +"' );");
             writer.flush();
         }
         writer.close();
     }
 
     private void personnummer(){
-
-        arraypnummer = new int[3000000];
-        int i1 = 2345452;
-        for (int i = 0 ; i <= 254546 ;i++){
-            arraypnummer[i] = i1;
-            i1++;
+        for (int i = 4700901 ; i < 5209993 ;i++){
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
     private void bezeichnung(){
@@ -54,7 +51,7 @@ public class TrainerEigenschaft {
             arraybezeichnung.add("Mannschaft 1");
         }
 
-        for (int i = 2; i <= arraypnummer.length-1; i++) {
+        for (int i = 2; i <= 1000000; i++) {
             i2++;
             if (i2 == 2){
                 arraybezeichnung.add("Mannschaft " + i1);

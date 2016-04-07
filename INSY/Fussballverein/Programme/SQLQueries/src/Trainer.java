@@ -1,27 +1,26 @@
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 public class Trainer {
 
-    int[] arraypnummer;
+    ArrayList<Integer> arraypnummer = new ArrayList<Integer>();
     String[] arraygehalt;
 
     public Trainer() throws FileNotFoundException, UnsupportedEncodingException {
         PrintWriter writer = null;
         writer = new PrintWriter("Trainer.sql", "UTF-8");
-        writer.println("INSERT INTO Trainer(persnr,gehalt,vertragsbeginn,vertragsende) VALUES ");
-
         personnummer();
         gehalt();
         for(int i = 0; i < 254546; i++) {
-            int i01 = arraypnummer[i];
+            int i01 = arraypnummer.get(i);
             String s01 = arraygehalt[i];
 
             GregorianCalendar gc = new GregorianCalendar();
 
-            int year = randBetween(1975, 1995);
+            int year = randBetween(2009, 2011);
 
             gc.set(gc.YEAR, year);
 
@@ -30,9 +29,9 @@ public class Trainer {
             gc.set(gc.DAY_OF_YEAR, dayOfYear);
 
 
-            writer.print("( " + i01 +" , " + s01 +", DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' ,");
+            writer.print("INSERT INTO Trainer VALUES( " + i01 +" , " + s01 +", DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' ,");
 
-            int year2 = randBetween(2010, 2020);
+            int year2 = randBetween(2014, 2016);
 
             gc.set(gc.YEAR, year2);
 
@@ -40,7 +39,7 @@ public class Trainer {
 
             gc.set(gc.DAY_OF_YEAR, dayOfYear2);
 
-            writer.println("DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' ),");
+            writer.println("DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) + "' );");
 
             writer.flush();
 
@@ -53,12 +52,10 @@ public class Trainer {
 
 
     private void personnummer(){
-
-        arraypnummer = new int[3000000];
-        int i1 = 2345452;
-        for (int i = 0 ; i <= 254546 ;i++){
-            arraypnummer[i] = i1;
-            i1++;
+        for (int i = 4700901 ; i < 5209993 ;i++){
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
     private void gehalt(){

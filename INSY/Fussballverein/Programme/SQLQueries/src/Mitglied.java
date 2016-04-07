@@ -14,22 +14,23 @@ public class Mitglied {
         beitrag();
         PrintWriter writer = null;
         writer = new PrintWriter("Mitglied.sql", "UTF-8");
-        writer.println("INSERT INTO Mitglied(persnr,beitrag) VALUES ");
 
-        for(int i = 0; i<arraypnummer.size(); i++) {
+        for(int i = 0; i < 1345451; i++) {
             String s01 = arraybeitrag.get(i);
             int i01 = arraypnummer.get(i);
 
 
-            writer.println("( " + i01 + " , '" + s01 + "' ),");
+            writer.println("INSERT INTO Mitglied VALUES( " + i01 + " , '" + s01 + "' );");
             writer.flush();
         }
         writer.close();
     }
 
     private void personnummer(){
-        for (int i = 0 ; i <= 1345451 ;i++){
-            arraypnummer.add(i);
+        for (int i = 10000 ; i <= 2700902 ;i++){
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
     private void beitrag(){

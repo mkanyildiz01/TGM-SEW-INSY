@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Spielt {
 
-    int[] arraypnummer;
+    ArrayList<Integer> arraypnummer = new ArrayList<Integer>();
     int[] arraydauer;
 
     String[] arrs01 = new String[1000000];
@@ -20,7 +20,7 @@ public class Spielt {
         writer0 = new PrintWriter("Spielt.sql", "UTF-8");
         for(int i = 0; i <= arrs02.length-1; i++) {
             String s01 = arrs02[i];
-            Integer i01 = arraypnummer[i];
+            Integer i01 = arraypnummer.get(i);
             Integer i02 = arraydauer[i];
             writer0.println("INSERT INTO Spielt VALUES( " + i01 + ", DATE '" + s01 + "' , " + i02 + " );");
             writer0.flush();
@@ -64,12 +64,10 @@ public class Spielt {
         }
     }
     private void personnummer(){
-
-        arraypnummer = new int[4000000];
-        int i1 = 2599998;
-        for (int i = 0 ; i <= 1400003 ;i++){
-            arraypnummer[i] = i1;
-            i1++;
+        for (int i = 5209994; i <= 8010000;i++){
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
     private void dauer(){

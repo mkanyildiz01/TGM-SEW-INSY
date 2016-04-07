@@ -10,12 +10,12 @@ public class FanClub {
     ArrayList<String> arrayname = new ArrayList<String>();
     ArrayList<String> arrayobman = new ArrayList<String>();
     ArrayList<Integer> arraysid = new ArrayList<Integer>();
+
     public FanClub() throws FileNotFoundException, UnsupportedEncodingException {
         personnummer();
         name();
         PrintWriter writer = null;
         writer = new PrintWriter("FanClub.sql", "UTF-8");
-        writer.println("INSERT INTO FanClub(persnr,name,sid,gegruendet,istobman) VALUES ");
 
         for(int i = 0; i<arraypnummer.size(); i++) {
             int i01 = arraypnummer.get(i);
@@ -24,7 +24,7 @@ public class FanClub {
             String s02 = arrayobman.get(i);
             GregorianCalendar gc = new GregorianCalendar();
 
-            int year = randBetween(1975, 1995);
+            int year = randBetween(2005, 2007);
 
             gc.set(gc.YEAR, year);
 
@@ -32,7 +32,7 @@ public class FanClub {
 
             gc.set(gc.DAY_OF_YEAR, dayOfYear);
 
-            writer.println("( " + i01 +
+            writer.println("INSERT INTO FanClub VALUES( " + i01 +
                                                         " , '" +
                                                         s01 +
                                                         "' , " +
@@ -40,7 +40,7 @@ public class FanClub {
                                                         " , DATE '" + gc.get(gc.YEAR) + "-" + (gc.get(gc.MONTH) + 1) + "-" + gc.get(gc.DAY_OF_MONTH) +
                                                         "' , '" +
                                                         s02 +
-                                                        "' ),");
+                                                        "' );");
             writer.flush();
         }
         writer.close();
@@ -49,8 +49,10 @@ public class FanClub {
     }
 
     private void personnummer(){
-        for (int i = 1 ; i <= 1345451 ;i++){
-            arraypnummer.add(i);
+        for (int i = 10000 ; i < 2700902 ;i++){
+            if (i % 2 == 0) {
+                arraypnummer.add(i);
+            }
         }
     }
     private void name(){

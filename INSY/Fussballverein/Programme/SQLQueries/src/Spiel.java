@@ -42,7 +42,7 @@ public class Spiel{
             java.sql.Date sqlDate = new java.sql.Date(addDays(myDate, i).getTime());
 
             writer.println("INSERT INTO Spiel VALUES( DATE '" + sqlDate + "' , '" + s01 + "' , '" + s02 + "' , '" + s03 + "' );");
-            writer1.println("(DATE '" + sqlDate + "');");
+            writer1.println(sqlDate);
 
             writer.flush();
             writer1.flush();

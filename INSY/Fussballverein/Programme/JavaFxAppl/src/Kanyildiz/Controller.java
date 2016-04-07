@@ -227,10 +227,11 @@ public class Controller{
         }
     }
     private boolean CheckUserInputRead(){
-        boolean bdrop = szusatz.contains("Drop");
-        boolean b2 = szusatz.contains("Update");
-        boolean b3 = szusatz.contains("Insert");
-        boolean b4 = szusatz.contains("Create");
+        String temp = szusatz.toLowerCase();
+        boolean bdrop = temp.contains("drop");
+        boolean b2 = temp.contains("update");
+        boolean b3 = temp.contains("insert");
+        boolean b4 = temp.contains("create");
         boolean b5 = false;
         if((bdrop != false) || (b2 != false) || (b3 != false) || (b4 != false)){
             b5 = true;
