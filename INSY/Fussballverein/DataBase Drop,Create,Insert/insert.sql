@@ -1,13 +1,3 @@
-\i Person.sql
-\i Standort.sql
-\i Mannschaft.sql
-\i Mitglied.sql
-\i Angestellter.sql
-\i Trainer.sql
-\i Spieler.sql
-\i FanClub.sql
-\i Betreut.sql
-\i Spiel.sql
-\i Spielt.sql
-\i SpielerEigenschaft.sql
-\i TrainerEigenschaft.sql
+version https://git-lfs.github.com/spec/v1
+oid sha256:2433665c3a283876680421844c075fc1829c31f0307f00b7f5dc7e691fd38c7b
+size 236

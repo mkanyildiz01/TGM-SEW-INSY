@@ -1,20 +1,14 @@
 package Kanyildiz;
-import java.sql.Connection;
-import java.sql.ResultSet;
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableColumn.CellDataFeatures;
-import javafx.scene.control.TableView;
-import javafx.util.Callback;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.TableColumn.CellDataFeatures;
+import javafx.util.Callback;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
 
 public class Controller{
     @FXML
