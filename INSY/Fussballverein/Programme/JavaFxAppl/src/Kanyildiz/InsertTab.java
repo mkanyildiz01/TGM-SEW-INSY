@@ -1,8 +1,14 @@
+/**
+ * autor: Kanyildiz Muhamemdhizir
+ * klasse: 4AHITM
+ * Datum: 16.04.2016
+ * FileName: InsertTab.java
+ * Package: Kanyildiz
+ **/
 package Kanyildiz;
-import java.sql.*;
-
 import org.postgresql.ds.PGSimpleDataSource;
 
+import java.sql.*;
 
 public class InsertTab {
     private PreparedStatement prep;
@@ -10,10 +16,19 @@ public class InsertTab {
     PGSimpleDataSource ds = new PGSimpleDataSource();
 
     /**
-     * In der insert() Methode werden 4 Parameter übergeben. Diese sind nummer, vorname , nachname und Connection
-     * Die ersten 3 Parameter sind für die Query nötig und der Connection Parameter ist dafür notwendig um die CRUD Methode mit der Klasse SQL zu verbinden.
-     * Die ersten 3 Parameter werden mit der in der Query vorkommenden Reihenfolge der Fragezeichen (?) in die sets()übergeben.
-     */
+     *
+     * @param num Spieler Nummer
+     * @param pos Spieler Position
+     * @param gehalt Spieler Gehalt
+     * @param vertragvon Spieler Vertrag von
+     * @param vertragbis Spieler Vertrag bis
+     * @param con Die Datenbank-Connection
+     *
+     *
+     * In der insert() Methode werden 6 Parameter übergeben.
+     * Die ersten 5 Parameter werden mit der in der Query vorkommenden Reihenfolge der Fragezeichen (?) in die sets()übergeben.
+     * Der 6 Parameter ist für die Connection notwendig.
+     **/
     public void insert(int num, String pos, Double gehalt,Date vertragvon, Date vertragbis,Connection con){
         try {
             String sql = "INSERT INTO Spieler (persnr, position, gehalt,vertragvon,vertragbis) VALUES (?, ?, ?, ?, ?)";
@@ -29,6 +44,5 @@ public class InsertTab {
         }catch(SQLException e){
             e.printStackTrace();
         }
-
     }
 }
