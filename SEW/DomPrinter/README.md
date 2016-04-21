@@ -1,11 +1,25 @@
 #Aufgabenstellung
-Erstelle ein XML-Dokument für deine Klasse!
+Gegeben ist customerOrders.xml. Erarbeite über DOM folgende Fragestellungen und gib das Ergebnis in der Konsole aus:
 
-    Welche Daten speicherst du als Attribut oder Element?
-    Speichere pro Person mindestens sechs Eigenschaften
-    Bilde zumindest fünf Personen ab
-    Verwende sowohl Elemente als auch Attribute
-    Überprüfe, ob dein XML-Dokument wohlgeformt ist (suche ein entsprechendes Tool!)
-    Stelle dein Ergebnis als DOM-Baum dar!
-    Erweiterung: Erstelle und beschreibe fünf unterschiedliche Beispiele, welche die Wohlgeformtheit verletzen und erkläre die verletzte Regel
-    Erweiterung: Schreibe ein kleines Java-Programm, welches die Wohlgeformtheit einer konfigurierbaren XML-Datei überprüft
+    Wie viele Kunden und wie viele Bestellungen sind gespeichert?
+    Welche CustomerID besitzt der vierte Kunde?
+    Wie lautet die vollständige Adresse von der Firma Lazy K Kountry Store?
+    Gibt es Kunden, welche dieselbe dreistellige Vorwahl verwenden?
+    Gibt es Kunden, die nicht aus den USA sind?
+    Welche(r) Kunde(n ) hatte(n ) die meisten Bestellungen?
+    Wann war die letzte Bestellung von LAZYK?
+    Von wie vielen verschiedenen Mitarbeitern wurde GREAL bedient?
+    Welches Gewicht hat LETSS insgesamt verschicken lassen?
+
+Füge außerdem jedem Kunden über DOM das Kindelement "language" hinzu, welches ein Attribut value mit dem Wert "en" besitzt (sofern noch nicht vorhanden) und speichere das Dokument
+
+Dein Programm muss auch mit anderen Daten in derselben Struktur funktionieren (keine hardcoded Bezüge etc.)!
+
+Achte auf ein sauberes Exception Handling und Fehlerbehandlungen (auch null-Werte)!
+
+Kommentiere dein Programm in der Standardform für Java!
+
+Erweiterungen:
+
+    Gestalte alle Abfragen konfigurierbar (z.B. Kommandozeilenparameter oder über Konsole einlesen), sofern es die Abfrage sinnvoll erlaubt
+    Ermögliche das Einlesen von zusätzlichen Kunden aus einem zweiten XML-File und füge diese dem XML-File hinzu (und speichere das Ergebnis)
