@@ -1,3 +1,6 @@
-# SEW Folder: SEW HUE'S und SEW Projekte(Gruppenarbeiten)
-# INSY Folder: INSY HUE'S und INSY Projekte(Gruppenarbeiten)
-# Groeße Projekte Folder: Verbesserungs Projekt und Prüfungs Projekte
+# SEW
+Im SEW Ordner sind Hausübungen, Projekte oder Schulübungen drinen.
+Alles was im SEW Unterricht besprochen wurde.
+# INSY
+Im INSY Ordner sind Hausübungen, Projekte oder Schulübungen drinen.
+Alles was im INSY Unterricht besprochen wurde.
