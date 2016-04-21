@@ -1,8 +1,0 @@
-ERD                 :   Fertig
-RM                  :   Fertig
-Create-Script       :   Fertig
-Inserts             :   Fertig
-Select-Abfragen     :   Fertig
-JDBC-Connection     :   Fertig
-JavaFxProgramm      :   Dokummentation Fehlt, Java Doc File Fehlt, Build-Make Fehlt
-Protokoll           :   Fertig
