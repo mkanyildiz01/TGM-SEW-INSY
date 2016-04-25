@@ -5,4 +5,6 @@ Es dreht sich alles im Großen und Ganzen um ERD's SQL-Datenbanken Java|JavaFx.
 #Wordpress Plugin
 Im Ordern mit dem Namen WordpressPlugin ist ein Wordpress Plugin drinnen, der für die Verbingung und
 Auslesung von Daten zuständig ist.
-(Prof. Brain Aufgabenstellung)
+(Prof. Brein Aufgabenstellung)
+Außerdem ist noch zusätzlich die Joomla-Datenbankverbindungs Aufgabe drinnen.
+(Prof. Brein Aufgabenstellung)
