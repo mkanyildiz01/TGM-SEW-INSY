@@ -6,7 +6,7 @@ import java.sql.*;
 
 public class CommandLineInterface {
 
-    public static void main(String[]args) throws ParseException {
+    public static void main(String[]args) throws ParseException, SQLException {
 
         CommandLineParser CLP  = new DefaultParser();
 
@@ -21,13 +21,12 @@ public class CommandLineInterface {
 
         CommandLine CL =  CLP.parse( options , args );
 
-        SQL.h_ = CL.getOptionValue("h_");
-        SQL.P_ = CL.getOptionValue("p_");
-        SQL.d_ = CL.getOptionValue("d_");
-        SQL.u_ = CL.getOptionValue("u_");
-        SQL.p_ = CL.getOptionValue("u_");
-        SQL.help = CL.getOptionValue("help");
-        SQL connection = new SQL();
-        connnection.connect();
+        PostgreSQLConnection.h_ = CL.getOptionValue("h_");
+        PostgreSQLConnection.P_ = Integer.valueOf(CL.getOptionValue("p_"));
+        PostgreSQLConnection.d_ = CL.getOptionValue("d_");
+        PostgreSQLConnection.u_ = CL.getOptionValue("u_");
+        PostgreSQLConnection.p_ = CL.getOptionValue("u_");
+        PostgreSQLConnection PSQLC= new PostgreSQLConnection();
+        PSQLC.connection();
     }
 }
