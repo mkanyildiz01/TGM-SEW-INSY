@@ -18,7 +18,6 @@ public class CommandLineInterface {
         options.addOption("p_",true,"Passwort");
         options.addOption("help",true, "Help");
 
-
         CommandLine CL =  CLP.parse( options , args );
 
         PostgreSQLConnection.h_ = CL.getOptionValue("h_");
@@ -27,6 +26,5 @@ public class CommandLineInterface {
         PostgreSQLConnection.u_ = CL.getOptionValue("u_");
         PostgreSQLConnection.p_ = CL.getOptionValue("u_");
         PostgreSQLConnection PSQLC= new PostgreSQLConnection();
-        PSQLC.connection();
     }
 }
