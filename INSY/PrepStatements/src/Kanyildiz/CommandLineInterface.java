@@ -26,5 +26,6 @@ public class CommandLineInterface {
         PostgreSQLConnection.u_ = CL.getOptionValue("u_");
         PostgreSQLConnection.p_ = CL.getOptionValue("u_");
         PostgreSQLConnection PSQLC= new PostgreSQLConnection();
+
     }
 }
