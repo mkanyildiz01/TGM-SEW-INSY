@@ -9,3 +9,6 @@ Auslesung von Daten zuständig ist.
 
 Außerdem ist noch zusätzlich die Joomla-Datenbankverbindungs Aufgabe drinnen.
 (Prof. Brein Aufgabenstellung)
+#PrepStatements
+Der Ordner mit dem Namen PrepStatements ist eine Gruppenarbeit indem man sich mit der CLI und dem Prepared Statement
+beschäftigen soll.
