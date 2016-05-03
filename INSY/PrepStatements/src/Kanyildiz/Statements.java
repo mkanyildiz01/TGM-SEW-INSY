@@ -24,7 +24,7 @@ public class Statements {
             String nummer = rs.getString(1);
             String beschreibung = rs.getString(2);
 
-            String output = "Person #%d: %s - %s";
+            String output = "Maschine #%d: %s - %s";
             System.out.println(String.format(output, ++count, nummer, beschreibung));
             }
         return null;
