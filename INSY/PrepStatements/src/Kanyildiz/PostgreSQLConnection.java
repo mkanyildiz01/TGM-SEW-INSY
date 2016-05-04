@@ -1,3 +1,16 @@
+/**
+ * Erstellung der Connection und Aufnehmen der Zeit(100 000 Datensätze)
+ *
+ * @author Kanyildiz Muhammedhizir
+ *
+ * @class PostgreSQLConnection.java
+ *
+ * @datum 04.05.2016
+ *
+ * @klasse 4AHITM
+ *
+ */
+
 package Kanyildiz;
 
 import org.postgresql.ds.PGSimpleDataSource;
@@ -6,6 +19,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+
 public class PostgreSQLConnection {
 
     public static String h_;
@@ -13,6 +27,7 @@ public class PostgreSQLConnection {
     public static String d_;
     public static String u_;
     public static String p_;
+
     public float TStart = Float.parseFloat(null);
     public float TEnde = Float.parseFloat(null);
 
@@ -25,7 +40,11 @@ public class PostgreSQLConnection {
     Statements statements = null;
     Connection con = null;
 
-    public PostgreSQLConnection() throws SQLException {
+    /**
+     *
+     * @throws SQLException
+     */
+    public void PostgreSQLConnection1() throws SQLException {
 
         statements = new Statements();
         PGSDS = new PGSimpleDataSource();
@@ -47,6 +66,11 @@ public class PostgreSQLConnection {
         TimeOut();
 
     }
+
+    /**
+     * Aufrufen des Insert-Statements und Inserten von 100 000 Datensätzen(Die Zeit wird aufgenommen.)
+     * @throws SQLException
+     */
     public void InsertBefehl() throws SQLException {
         Connection con = PGSDS.getConnection();
         Statement st = con.createStatement();
@@ -63,6 +87,11 @@ public class PostgreSQLConnection {
 
     }
 
+    /**
+     * Aufrufen des Select-Statements und Selecten von 100 000 Datensätzen(Die Zeit wird aufgenommen.)
+     *
+     * @throws SQLException
+     */
     public void SelectBefehl() throws SQLException {
         TStart = System.nanoTime();
         statements.select(con);
@@ -70,6 +99,11 @@ public class PostgreSQLConnection {
         STime = TEnde - TStart;
     }
 
+    /**
+     * Aufrufen des Update-Statements und Updaten von 100 000 Datensätzen(Die Zeit wird aufgenommen.)
+     *
+     * @throws SQLException
+     */
     public void UpdateBefehl() throws SQLException {
         TStart = System.nanoTime();
         for(int i=700; i<100700; i++){
@@ -79,6 +113,11 @@ public class PostgreSQLConnection {
         UTime = TEnde - TStart;
     }
 
+    /**
+     * Aufrufen des Delete-Statements und Deleten von 100 000 Datensätzen(Die Zeit wird aufgenommen.)
+     *
+     * @throws SQLException
+     */
     public void DeleatDefehl() throws SQLException {
         TStart = System.nanoTime();
         for(int i=700; i<100700; i++){
@@ -88,6 +127,9 @@ public class PostgreSQLConnection {
         DTime = TEnde - TStart;
     }
 
+    /**
+     * Die Zeitaufzeichnungen werden zusammengeführt und der Konsole ausgegeben.
+     */
     public void TimeOut(){
         System.out.println("INSERT: "+ ITime+" sek" + "SELECT: "+ STime+" sek" + "UPDATE: "+ UTime +" sek" + "DELEAT: "+ DTime +" sek");
     }
