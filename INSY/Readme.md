@@ -12,3 +12,5 @@ Außerdem ist noch zusätzlich die Joomla-Datenbankverbindungs Aufgabe drinnen.
 #PrepStatements
 Der Ordner mit dem Namen PrepStatements ist eine Gruppenarbeit indem man sich mit der CLI und dem Prepared Statement
 beschäftigen soll.
+#Data Dictionary
+Im Ordner mit dem Namen Data Dictionary befindet sich ein Protokoll über Data Dictionary.
