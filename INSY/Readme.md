@@ -14,3 +14,5 @@ Der Ordner mit dem Namen PrepStatements ist eine Gruppenarbeit indem man sich mi
 beschäftigen soll.
 #Data Dictionary
 Im Ordner mit dem Namen Data Dictionary befindet sich ein Protokoll über Data Dictionary.
+#Couchbase
+Im Ordner mit dem Namen Data Dictionary befindet sich ein Protokoll über Couchbase
