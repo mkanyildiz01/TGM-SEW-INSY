@@ -9,7 +9,7 @@ buildscript {
 	repositories {
 		maven {
 			url "https://plugins.gradle.org/m2/"
-	        }
+		}
 	}
 
 	dependencies {
@@ -34,6 +34,6 @@ dependencies {
 gretty {
 	// Possible servletContainer values are 'jetty7', 'jetty8', 'jetty9', 'tomcat7', 'tomcat8'. Default is 'jetty9'.
 	servletContainer = 'jetty9'
-	host = '172.17.0.1'
+	host = 'localhost'
 	httpPort = 1234
 }

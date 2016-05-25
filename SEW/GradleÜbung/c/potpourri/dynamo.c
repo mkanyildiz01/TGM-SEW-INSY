@@ -2,22 +2,27 @@
 #include <stdlib.h>
 #include <limits.h>
 
+void speicher_reservieren(void* speicheraddresse);
+
 int main( int argc, char** argv)
 {
-  int *pint;
+  int *pint = malloc(NULL);
   int i;
 
-  for(i=0; i<10; i++)
+  for(i=0; i<UINT_MAX; i++)
   {
-    if( !(pint = (int*) malloc(INT_MAX*sizeof(int))))
-    {
-      printf("\nSorry, habe keinen freien Speicherplatz mehr!");
-      printf("\nProgramm wird beendet ...\n");
-      return EXIT_FAILURE;
-    }
-
+    speicher_reservieren(pint);
     *pint = i+1;
     printf("\nHier ist die %d. Iteration\n",*pint);
   }
   return EXIT_SUCCESS;
+}
+
+
+void speicher_reservieren(void* speicheradresse) {
+    if( !(speicheradresse = malloc(10000*sizeof(int))))
+    {
+      printf("\nSorry, habe keinen freien Speicherplatz mehr!");
+      printf("\nProgramm sollte beendet werden ...\n");
+    }
 }
