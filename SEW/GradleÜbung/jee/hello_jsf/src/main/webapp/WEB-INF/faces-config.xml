@@ -4,11 +4,11 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
         http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
-    <!--
+
     <managed-bean>
-          <managed-bean-name>helloWorld</managed-bean-name>
-          <managed-bean-class>hello.HelloWorld</managed-bean-class>
+          <managed-bean-name>temperatureConvertor</managed-bean-name>
+          <managed-bean-class>model.TemperatureConvertor</managed-bean-class>
           <managed-bean-scope>session</managed-bean-scope>
      </managed-bean>
-	-->
+
 </faces-config>
